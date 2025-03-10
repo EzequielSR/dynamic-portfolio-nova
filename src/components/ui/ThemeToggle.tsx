@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import { Sun, Moon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ThemeToggle() {
+  const { t } = useLanguage();
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     // Check local storage or prefer-color-scheme
     if (localStorage.getItem('theme') === 'dark' || 
@@ -35,7 +37,7 @@ export default function ThemeToggle() {
         "text-foreground transition-transform duration-200",
         "hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary/30"
       )}
-      aria-label={theme === 'light' ? 'Ativar modo escuro' : 'Ativar modo claro'}
+      aria-label={theme === 'light' ? t('darkMode') : t('lightMode')}
     >
       {theme === 'light' ? (
         <Moon className="w-5 h-5" />

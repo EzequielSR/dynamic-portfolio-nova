@@ -5,15 +5,18 @@ import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from '../ui/ThemeToggle';
 import LanguageToggle from '../ui/LanguageToggle';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface NavItemProps {
   href: string;
-  label: string;
+  translationKey: 'projects' | 'about' | 'skills' | 'contact';
   className?: string;
   onClick?: () => void;
 }
 
-const NavItem = ({ href, label, className, onClick }: NavItemProps) => {
+const NavItem = ({ href, translationKey, className, onClick }: NavItemProps) => {
+  const { t } = useLanguage();
+  
   return (
     <RouterLink
       to={href}
@@ -23,7 +26,7 @@ const NavItem = ({ href, label, className, onClick }: NavItemProps) => {
       )}
       onClick={onClick}
     >
-      {label}
+      {t(translationKey)}
     </RouterLink>
   );
 };
@@ -60,10 +63,10 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-6">
-          <NavItem href="/#projects" label="Projetos" />
-          <NavItem href="/#about" label="Sobre" />
-          <NavItem href="/#skills" label="Habilidades" />
-          <NavItem href="/#contact" label="Contato" />
+          <NavItem href="/#projects" translationKey="projects" />
+          <NavItem href="/#about" translationKey="about" />
+          <NavItem href="/#skills" translationKey="skills" />
+          <NavItem href="/#contact" translationKey="contact" />
         </nav>
 
         {/* Theme and Language Toggles */}
@@ -94,10 +97,10 @@ export default function Navbar() {
         )}
       >
         <div className="container mx-auto px-6 py-8 flex flex-col space-y-8">
-          <NavItem href="/#projects" label="Projetos" className="text-xl" onClick={closeMenu} />
-          <NavItem href="/#about" label="Sobre" className="text-xl" onClick={closeMenu} />
-          <NavItem href="/#skills" label="Habilidades" className="text-xl" onClick={closeMenu} />
-          <NavItem href="/#contact" label="Contato" className="text-xl" onClick={closeMenu} />
+          <NavItem href="/#projects" translationKey="projects" className="text-xl" onClick={closeMenu} />
+          <NavItem href="/#about" translationKey="about" className="text-xl" onClick={closeMenu} />
+          <NavItem href="/#skills" translationKey="skills" className="text-xl" onClick={closeMenu} />
+          <NavItem href="/#contact" translationKey="contact" className="text-xl" onClick={closeMenu} />
           
           {/* Mobile Theme and Language Toggles */}
           <div className="flex items-center space-x-4 pt-4">
