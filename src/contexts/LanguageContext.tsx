@@ -232,7 +232,14 @@ export const translations = {
 };
 
 type Language = 'pt-BR' | 'en';
-type TranslationKeys = keyof typeof translations['en'] | keyof typeof translations['pt-BR'];
+
+// Define type for nested objects
+type NestedObject = {
+  [key: string]: string | NestedObject;
+};
+
+// Updated TranslationKeys to support nested keys
+type TranslationKeys = string;
 
 interface LanguageContextType {
   language: Language;
@@ -252,28 +259,34 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     document.documentElement.lang = language;
   }, [language]);
 
-  // Translation function
+  // Translation function that handles nested keys
   const t = (key: TranslationKeys): string => {
     // Handle nested keys (using dot notation like 'projects.title')
     if (key.includes('.')) {
       const parts = key.split('.');
-      const mainKey = parts[0] as keyof typeof translations[typeof language];
-      const nestedKey = parts[1];
+      let result: any = translations[language];
       
-      const mainObject = translations[language][mainKey];
-      if (mainObject && typeof mainObject === 'object' && nestedKey in mainObject) {
-        return (mainObject as any)[nestedKey];
+      // Navigate through the nested object
+      for (const part of parts) {
+        if (result && typeof result === 'object' && part in result) {
+          result = result[part];
+        } else {
+          return key; // Fallback to key if not found
+        }
       }
-      return key; // Fallback to key if not found
+      
+      return result && typeof result === 'string' ? result : key;
     }
     
     // Handle string formatting (replace {year} with current year for copyright)
     if (key === 'copyright') {
       const currentYear = new Date().getFullYear();
-      return (translations[language][key] as string).replace('{year}', currentYear.toString());
+      const text = translations[language][key];
+      return typeof text === 'string' ? text.replace('{year}', currentYear.toString()) : key;
     }
     
-    return translations[language][key as keyof typeof translations[typeof language]] || key;
+    const text = translations[language][key as keyof typeof translations[typeof language]];
+    return typeof text === 'string' ? text : key;
   };
 
   return (

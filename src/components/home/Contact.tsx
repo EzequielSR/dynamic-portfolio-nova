@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
@@ -40,6 +41,7 @@ const ContactInfo = ({ icon, title, value, href, delay = 0 }: ContactInfoProps) 
 );
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -63,8 +65,8 @@ export default function Contact() {
       setIsSubmitting(false);
       
       toast({
-        title: "Mensagem enviada!",
-        description: "Obrigado pelo contato. Responderei o mais breve possível.",
+        title: t('messageSent'),
+        description: t('thankYou'),
       });
       
       setFormData({
@@ -81,19 +83,19 @@ export default function Contact() {
       <div className="section-container">
         <FadeIn direction="up">
           <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-            Contato
+            {t('contactTitle')}
           </span>
         </FadeIn>
         
         <FadeIn direction="up" delay={100}>
           <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-6 tracking-tight">
-            Vamos conversar
+            {t('letsChat')}
           </h2>
         </FadeIn>
         
         <FadeIn direction="up" delay={200}>
           <p className="text-muted-foreground text-lg md:text-xl mb-12 max-w-2xl">
-            Interessado em trabalhar juntos? Preencha o formulário abaixo ou entre em contato através de um dos canais disponíveis.
+            {t('contactDescription')}
           </p>
         </FadeIn>
         
@@ -104,7 +106,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Nome
+                      {t('name')}
                     </label>
                     <input
                       id="name"
@@ -118,13 +120,13 @@ export default function Contact() {
                         "focus:outline-none focus:ring-2 focus:ring-primary/50",
                         "placeholder:text-muted-foreground/60 transition-all"
                       )}
-                      placeholder="Seu nome"
+                      placeholder={t('yourName')}
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      Email
+                      {t('email')}
                     </label>
                     <input
                       id="email"
@@ -138,14 +140,14 @@ export default function Contact() {
                         "focus:outline-none focus:ring-2 focus:ring-primary/50",
                         "placeholder:text-muted-foreground/60 transition-all"
                       )}
-                      placeholder="seu@email.com"
+                      placeholder={t('yourEmail')}
                     />
                   </div>
                 </div>
                 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                    Assunto
+                    {t('subject')}
                   </label>
                   <input
                     id="subject"
@@ -159,13 +161,13 @@ export default function Contact() {
                       "focus:outline-none focus:ring-2 focus:ring-primary/50",
                       "placeholder:text-muted-foreground/60 transition-all"
                     )}
-                    placeholder="Como posso ajudar?"
+                    placeholder={t('howCanIHelp')}
                   />
                 </div>
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Mensagem
+                    {t('message')}
                   </label>
                   <textarea
                     id="message"
@@ -180,7 +182,7 @@ export default function Contact() {
                       "placeholder:text-muted-foreground/60 transition-all",
                       "resize-none"
                     )}
-                    placeholder="Descreva seu projeto ou dúvida..."
+                    placeholder={t('projectDescription')}
                   />
                 </div>
                 
@@ -192,7 +194,7 @@ export default function Contact() {
                     iconPosition="right"
                     className="w-full md:w-auto"
                   >
-                    {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
+                    {isSubmitting ? t('sending') : t('sendMessage')}
                   </CustomButton>
                 </div>
               </form>
@@ -202,7 +204,7 @@ export default function Contact() {
           <div className="space-y-4">
             <ContactInfo
               icon={<AtSign className="w-5 h-5" />}
-              title="Email"
+              title={t('email')}
               value="contato@example.com"
               href="mailto:contato@example.com"
               delay={400}
@@ -210,7 +212,7 @@ export default function Contact() {
             
             <ContactInfo
               icon={<Phone className="w-5 h-5" />}
-              title="Telefone"
+              title={t('phone')}
               value="+55 (11) 99999-9999"
               href="tel:+5511999999999"
               delay={500}
@@ -218,7 +220,7 @@ export default function Contact() {
             
             <ContactInfo
               icon={<MapPin className="w-5 h-5" />}
-              title="Localização"
+              title={t('location')}
               value="São Paulo, Brasil"
               delay={600}
             />
