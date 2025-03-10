@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
-import { At, MapPin, Phone, SendHorizontal } from 'lucide-react';
+import { AtSign, MapPin, Phone, SendHorizontal } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { toast } from "@/hooks/use-toast";
 
@@ -201,7 +200,7 @@ export default function Contact() {
           
           <div className="space-y-4">
             <ContactInfo
-              icon={<At className="w-5 h-5" />}
+              icon={<AtSign className="w-5 h-5" />}
               title="Email"
               value="contato@example.com"
               href="mailto:contato@example.com"
