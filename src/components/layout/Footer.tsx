@@ -1,0 +1,60 @@
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  
+  return (
+    <footer className="border-t border-border/40 bg-muted/20 backdrop-blur-sm">
+      <div className="section-container py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="space-y-4">
+            <h3 className="font-display font-bold text-xl">Portfolio</h3>
+            <p className="text-muted-foreground max-w-md">
+              Showcasing creativity and technical expertise through 
+              a collection of carefully crafted digital experiences.
+            </p>
+          </div>
+          
+          <div className="space-y-4">
+            <h4 className="font-medium text-sm uppercase tracking-wider text-muted-foreground">Links Rápidos</h4>
+            <nav className="flex flex-col space-y-2">
+              <Link to="/#projects" className="text-foreground/80 hover:text-foreground transition-colors link-underline">Projetos</Link>
+              <Link to="/#about" className="text-foreground/80 hover:text-foreground transition-colors link-underline">Sobre</Link>
+              <Link to="/#skills" className="text-foreground/80 hover:text-foreground transition-colors link-underline">Habilidades</Link>
+              <Link to="/#contact" className="text-foreground/80 hover:text-foreground transition-colors link-underline">Contato</Link>
+            </nav>
+          </div>
+          
+          <div className="space-y-4">
+            <h4 className="font-medium text-sm uppercase tracking-wider text-muted-foreground">Contato</h4>
+            <div className="flex space-x-4">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
+                <Github className="h-5 w-5" />
+                <span className="sr-only">GitHub</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
+                <Linkedin className="h-5 w-5" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
+                <Twitter className="h-5 w-5" />
+                <span className="sr-only">Twitter</span>
+              </a>
+              <a href="mailto:contato@example.com" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
+                <Mail className="h-5 w-5" />
+                <span className="sr-only">Email</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-12 pt-6 border-t border-border/40 text-center text-sm text-muted-foreground">
+          <p>© {currentYear} Portfolio. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
