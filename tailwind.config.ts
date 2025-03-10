@@ -22,6 +22,8 @@ export default {
 			fontFamily: {
 				sans: ['Inter var', 'sans-serif'],
 				display: ['SF Pro Display', 'Inter var', 'sans-serif'],
+				serif: ['Georgia', 'serif'],
+				mono: ['Consolas', 'Courier New', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
