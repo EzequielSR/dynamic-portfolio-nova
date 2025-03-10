@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -88,7 +87,7 @@
   }
 
   .glass-effect {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl dark:bg-black/10 dark:border-white/10;
   }
 
   .section-container {

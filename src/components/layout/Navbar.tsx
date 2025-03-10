@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from '../ui/ThemeToggle';
+import LanguageToggle from '../ui/LanguageToggle';
 
 interface NavItemProps {
   href: string;
@@ -64,6 +66,12 @@ export default function Navbar() {
           <NavItem href="/#contact" label="Contato" />
         </nav>
 
+        {/* Theme and Language Toggles */}
+        <div className="hidden md:flex items-center space-x-2">
+          <LanguageToggle />
+          <ThemeToggle />
+        </div>
+
         {/* Mobile menu button */}
         <button 
           className="md:hidden focus:outline-none flex items-center"
@@ -90,6 +98,12 @@ export default function Navbar() {
           <NavItem href="/#about" label="Sobre" className="text-xl" onClick={closeMenu} />
           <NavItem href="/#skills" label="Habilidades" className="text-xl" onClick={closeMenu} />
           <NavItem href="/#contact" label="Contato" className="text-xl" onClick={closeMenu} />
+          
+          {/* Mobile Theme and Language Toggles */}
+          <div className="flex items-center space-x-4 pt-4">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </header>
