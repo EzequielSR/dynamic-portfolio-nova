@@ -3,8 +3,10 @@ import React, { useEffect, useState } from 'react';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
 import { ArrowDown } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Hero() {
+  const { t } = useLanguage();
   const [isLoaded, setIsLoaded] = useState(false);
   
   useEffect(() => {
@@ -32,19 +34,19 @@ export default function Hero() {
           <div className="max-w-2xl">
             <FadeIn direction="up">
               <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                Designer & Desenvolvedor
+                {t('designerDeveloper')}
               </span>
             </FadeIn>
             
             <FadeIn direction="up" delay={100}>
               <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6 tracking-tight">
-                Criando experiências digitais extraordinárias
+                {t('creatingExperiences')}
               </h1>
             </FadeIn>
             
             <FadeIn direction="up" delay={200}>
               <p className="text-muted-foreground text-lg md:text-xl mb-8 leading-relaxed">
-                Combinando design minimalista com tecnologia de ponta para criar soluções digitais elegantes, funcionais e memoráveis.
+                {t('heroDescription')}
               </p>
             </FadeIn>
             
@@ -57,7 +59,7 @@ export default function Hero() {
                   arrowIcon
                   iconPosition="right"
                 >
-                  Ver projetos
+                  {t('viewProjects')}
                 </CustomButton>
                 
                 <CustomButton 
@@ -65,7 +67,7 @@ export default function Hero() {
                   variant="outline" 
                   size="lg"
                 >
-                  Entre em contato
+                  {t('getInTouch')}
                 </CustomButton>
               </div>
             </FadeIn>
@@ -103,7 +105,7 @@ export default function Hero() {
             href="#projects" 
             className="flex flex-col items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
-            <span className="mb-2">Scroll para explorar</span>
+            <span className="mb-2">{t('scrollToExplore')}</span>
             <ArrowDown className="w-5 h-5 animate-bounce" />
           </a>
         </FadeIn>

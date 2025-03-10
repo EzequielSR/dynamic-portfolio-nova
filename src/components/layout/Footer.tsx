@@ -2,8 +2,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
   
   return (
@@ -19,17 +21,17 @@ export default function Footer() {
           </div>
           
           <div className="space-y-4">
-            <h4 className="font-medium text-sm uppercase tracking-wider text-muted-foreground">Links Rápidos</h4>
+            <h4 className="font-medium text-sm uppercase tracking-wider text-muted-foreground">{t('quickLinks')}</h4>
             <nav className="flex flex-col space-y-2">
-              <Link to="/#projects" className="text-foreground/80 hover:text-foreground transition-colors link-underline">Projetos</Link>
-              <Link to="/#about" className="text-foreground/80 hover:text-foreground transition-colors link-underline">Sobre</Link>
-              <Link to="/#skills" className="text-foreground/80 hover:text-foreground transition-colors link-underline">Habilidades</Link>
-              <Link to="/#contact" className="text-foreground/80 hover:text-foreground transition-colors link-underline">Contato</Link>
+              <Link to="/#projects" className="text-foreground/80 hover:text-foreground transition-colors link-underline">{t('projects')}</Link>
+              <Link to="/#about" className="text-foreground/80 hover:text-foreground transition-colors link-underline">{t('about')}</Link>
+              <Link to="/#skills" className="text-foreground/80 hover:text-foreground transition-colors link-underline">{t('skills')}</Link>
+              <Link to="/#contact" className="text-foreground/80 hover:text-foreground transition-colors link-underline">{t('contact')}</Link>
             </nav>
           </div>
           
           <div className="space-y-4">
-            <h4 className="font-medium text-sm uppercase tracking-wider text-muted-foreground">Contato</h4>
+            <h4 className="font-medium text-sm uppercase tracking-wider text-muted-foreground">{t('contact')}</h4>
             <div className="flex space-x-4">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
                 <Github className="h-5 w-5" />
@@ -52,7 +54,7 @@ export default function Footer() {
         </div>
         
         <div className="mt-12 pt-6 border-t border-border/40 text-center text-sm text-muted-foreground">
-          <p>© {currentYear} Portfolio. Todos os direitos reservados.</p>
+          <p>{t('copyright')}</p>
         </div>
       </div>
     </footer>

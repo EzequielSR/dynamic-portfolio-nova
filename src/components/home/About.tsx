@@ -3,6 +3,7 @@ import React from 'react';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
 import { ArrowRight, Award, Briefcase, Clock, GraduationCap } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface TimelineItemProps {
   year: string;
@@ -28,6 +29,8 @@ const TimelineItem = ({ year, title, description, icon }: TimelineItemProps) => 
 );
 
 export default function About() {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative py-24 sm:py-32 bg-muted/30" id="about">
       <div className="section-container">
@@ -35,31 +38,31 @@ export default function About() {
           <div>
             <FadeIn direction="up">
               <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                Sobre mim
+                {t('aboutMe')}
               </span>
             </FadeIn>
             
             <FadeIn direction="up" delay={100}>
               <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-6 tracking-tight">
-                Designer e desenvolvedor apaixonado por criar
+                {t('passionateDevDesigner')}
               </h2>
             </FadeIn>
             
             <FadeIn direction="up" delay={200}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Olá! Sou um desenvolvedor front-end e designer de interfaces, com mais de 5 anos de experiência na criação de experiências digitais elegantes e funcionais.
+                {t('aboutIntro')}
               </p>
             </FadeIn>
             
             <FadeIn direction="up" delay={300}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Meu foco está em criar produtos digitais que sejam não apenas esteticamente agradáveis, mas também intuitivos e acessíveis. Acredito que o bom design é aquele que passa despercebido enquanto cumpre seu propósito.
+                {t('aboutDescription1')}
               </p>
             </FadeIn>
             
             <FadeIn direction="up" delay={400}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Quando não estou codificando ou desenhando interfaces, estou explorando novas tecnologias, lendo sobre design ou caminhando ao ar livre para renovar a criatividade.
+                {t('aboutDescription2')}
               </p>
             </FadeIn>
             
@@ -70,22 +73,22 @@ export default function About() {
                 icon={<ArrowRight className="w-4 h-4" />}
                 iconPosition="right"
               >
-                Download CV
+                {t('downloadCV')}
               </CustomButton>
             </FadeIn>
           </div>
           
           <div>
             <FadeIn direction="up" delay={200}>
-              <h3 className="font-display font-bold text-2xl mb-8">Minha jornada</h3>
+              <h3 className="font-display font-bold text-2xl mb-8">{t('myJourney')}</h3>
             </FadeIn>
             
             <div className="ml-4">
               <FadeIn direction="up" delay={300}>
                 <TimelineItem
                   year="2021 - Presente"
-                  title="Lead UX/UI Designer"
-                  description="Liderando projetos de design de produto e colaborando com equipes multidisciplinares para criar experiências de usuário excepcionais."
+                  title={t('leadDesigner.title')}
+                  description={t('leadDesigner.description')}
                   icon={<Briefcase className="w-5 h-5" />}
                 />
               </FadeIn>
@@ -93,8 +96,8 @@ export default function About() {
               <FadeIn direction="up" delay={400}>
                 <TimelineItem
                   year="2018 - 2021"
-                  title="Desenvolvedor Front-end Sênior"
-                  description="Desenvolvimento de aplicações web responsivas e performáticas usando tecnologias modernas como React, TypeScript e TailwindCSS."
+                  title={t('seniorDev.title')}
+                  description={t('seniorDev.description')}
                   icon={<Clock className="w-5 h-5" />}
                 />
               </FadeIn>
@@ -102,8 +105,8 @@ export default function About() {
               <FadeIn direction="up" delay={500}>
                 <TimelineItem
                   year="2016 - 2018"
-                  title="Bacharel em Ciência da Computação"
-                  description="Formação acadêmica com foco em programação, algoritmos, estruturas de dados e desenvolvimento de software."
+                  title={t('bachelorCS.title')}
+                  description={t('bachelorCS.description')}
                   icon={<GraduationCap className="w-5 h-5" />}
                 />
               </FadeIn>
@@ -111,8 +114,8 @@ export default function About() {
               <FadeIn direction="up" delay={600}>
                 <TimelineItem
                   year="2015"
-                  title="Certificação em UI/UX Design"
-                  description="Especialização em design de interfaces e experiência do usuário, com foco em metodologias centradas no usuário."
+                  title={t('uiCertification.title')}
+                  description={t('uiCertification.description')}
                   icon={<Award className="w-5 h-5" />}
                 />
               </FadeIn>

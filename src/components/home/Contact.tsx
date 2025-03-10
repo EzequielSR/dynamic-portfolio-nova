@@ -4,6 +4,7 @@ import CustomButton from '../ui/CustomButton';
 import { AtSign, MapPin, Phone, SendHorizontal } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { toast } from "@/hooks/use-toast";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ContactInfoProps {
   icon: React.ReactNode;

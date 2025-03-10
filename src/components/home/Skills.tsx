@@ -2,6 +2,7 @@
 import React from 'react';
 import FadeIn from '../animations/FadeIn';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface SkillCategoryProps {
   title: string;
@@ -58,6 +59,8 @@ const SkillProgress = ({ name, percentage, delay = 0 }: SkillProgressProps) => {
 };
 
 export default function Skills() {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative py-24 sm:py-32" id="skills">
       <div 
@@ -70,37 +73,37 @@ export default function Skills() {
       <div className="section-container">
         <FadeIn direction="up">
           <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-            Habilidades
+            {t('skillsTitle')}
           </span>
         </FadeIn>
         
         <FadeIn direction="up" delay={100}>
           <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-6 tracking-tight">
-            Minhas competências
+            {t('myCompetencies')}
           </h2>
         </FadeIn>
         
         <FadeIn direction="up" delay={200}>
           <p className="text-muted-foreground text-lg md:text-xl mb-12 max-w-2xl">
-            Ao longo da minha carreira, desenvolvi um conjunto diversificado de habilidades que me permitem criar soluções digitais completas e eficientes.
+            {t('skillsDescription')}
           </p>
         </FadeIn>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           <SkillCategory
-            title="Desenvolvimento Frontend"
+            title={t('frontendDev')}
             skills={["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Vue.js", "Next.js", "Tailwind CSS"]}
             delay={300}
           />
           
           <SkillCategory
-            title="Desenvolvimento Backend"
+            title={t('backendDev')}
             skills={["Node.js", "Express", "GraphQL", "REST API", "Firebase", "PostgreSQL", "MongoDB"]}
             delay={400}
           />
           
           <SkillCategory
-            title="Design & Ferramentas"
+            title={t('designTools')}
             skills={["Figma", "Adobe XD", "Photoshop", "Illustrator", "UI/UX", "Git", "Webpack", "Vite"]}
             delay={500}
           />
@@ -109,24 +112,24 @@ export default function Skills() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           <div>
             <FadeIn direction="up" delay={200}>
-              <h3 className="font-display font-bold text-2xl mb-6">Habilidades técnicas</h3>
+              <h3 className="font-display font-bold text-2xl mb-6">{t('technicalSkills')}</h3>
             </FadeIn>
             
-            <SkillProgress name="Desenvolvimento Frontend" percentage={95} delay={300} />
+            <SkillProgress name={t('frontendDev')} percentage={95} delay={300} />
             <SkillProgress name="UI/UX Design" percentage={90} delay={400} />
-            <SkillProgress name="Desenvolvimento Backend" percentage={80} delay={500} />
+            <SkillProgress name={t('backendDev')} percentage={80} delay={500} />
             <SkillProgress name="Mobile Development" percentage={75} delay={600} />
           </div>
           
           <div>
             <FadeIn direction="up" delay={200}>
-              <h3 className="font-display font-bold text-2xl mb-6">Soft skills</h3>
+              <h3 className="font-display font-bold text-2xl mb-6">{t('softSkills')}</h3>
             </FadeIn>
             
-            <SkillProgress name="Comunicação" percentage={90} delay={300} />
-            <SkillProgress name="Trabalho em equipe" percentage={95} delay={400} />
-            <SkillProgress name="Resolução de problemas" percentage={85} delay={500} />
-            <SkillProgress name="Gerenciamento de tempo" percentage={80} delay={600} />
+            <SkillProgress name={t('communication')} percentage={90} delay={300} />
+            <SkillProgress name={t('teamwork')} percentage={95} delay={400} />
+            <SkillProgress name={t('problemSolving')} percentage={85} delay={500} />
+            <SkillProgress name={t('timeManagement')} percentage={80} delay={600} />
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { ExternalLink, Github } from 'lucide-react';
 import CustomButton from './CustomButton';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ProjectCardProps {
   title: string;
@@ -23,6 +24,7 @@ export default function ProjectCard({
   githubUrl,
   className
 }: ProjectCardProps) {
+  const { t } = useLanguage();
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   
   return (
@@ -79,7 +81,7 @@ export default function ProjectCard({
               icon={<ExternalLink className="w-4 h-4" />}
               iconPosition="right"
             >
-              Ver projeto
+              {t('viewProject')}
             </CustomButton>
           )}
           
@@ -92,7 +94,7 @@ export default function ProjectCard({
               icon={<Github className="w-4 h-4" />}
               iconPosition="left"
             >
-              GitHub
+              {t('github')}
             </CustomButton>
           )}
         </div>

@@ -6,9 +6,11 @@ import Footer from "../components/layout/Footer";
 import CustomButton from "../components/ui/CustomButton";
 import { ArrowLeft } from "lucide-react";
 import FadeIn from "../components/animations/FadeIn";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const NotFound = () => {
   const location = useLocation();
+  const { t } = useLanguage();
 
   useEffect(() => {
     console.error(
@@ -25,19 +27,19 @@ const NotFound = () => {
         <div className="section-container text-center py-24">
           <FadeIn direction="up">
             <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              Erro 404
+              {t('error404')}
             </span>
           </FadeIn>
           
           <FadeIn direction="up" delay={100}>
             <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6 tracking-tight">
-              Página não encontrada
+              {t('pageNotFound')}
             </h1>
           </FadeIn>
           
           <FadeIn direction="up" delay={200}>
             <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-md mx-auto">
-              A página que você está tentando acessar não existe ou foi movida.
+              {t('pageNotFoundDesc')}
             </p>
           </FadeIn>
           
@@ -47,7 +49,7 @@ const NotFound = () => {
               icon={<ArrowLeft className="w-4 h-4" />}
               iconPosition="left"
             >
-              Voltar para a página inicial
+              {t('backToHome')}
             </CustomButton>
           </FadeIn>
         </div>
