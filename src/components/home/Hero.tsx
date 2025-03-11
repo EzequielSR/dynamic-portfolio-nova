@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
 import { ArrowDown } from 'lucide-react';
