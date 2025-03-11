@@ -2,7 +2,7 @@
 import React from 'react';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
-import { ArrowRight, Award, Briefcase, Clock, GraduationCap } from 'lucide-react';
+import { ArrowRight, Award, Briefcase, Clock, GraduationCap, Github } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface TimelineItemProps {
@@ -43,37 +43,42 @@ export default function About() {
             </FadeIn>
             
             <FadeIn direction="up" delay={100}>
-              <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-6 tracking-tight">
+              <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-6 tracking-tight flex items-center gap-3">
                 {t('passionateDevDesigner')}
+                <a href="https://github.com/EzequielSR" target="_blank" rel="noopener noreferrer" className="inline-flex">
+                  <Github className="h-8 w-8 text-primary hover:text-accent transition-colors" />
+                </a>
               </h2>
             </FadeIn>
             
             <FadeIn direction="up" delay={200}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                {t('aboutIntro')}
+                Ezequiel Santos Rodrigues - Desenvolvedor Full Stack
               </p>
             </FadeIn>
             
             <FadeIn direction="up" delay={300}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                {t('aboutDescription1')}
+                Sou um desenvolvedor apaixonado por criar soluções web inovadoras, com foco em tecnologias frontend e backend modernas.
+                Atualmente trabalho com React, TypeScript, Node.js e outras tecnologias para criar aplicações web responsivas e de alto desempenho.
               </p>
             </FadeIn>
             
             <FadeIn direction="up" delay={400}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                {t('aboutDescription2')}
+                Estou constantemente aprendendo novas tecnologias e técnicas para melhorar minhas habilidades de desenvolvimento
+                e criar experiências digitais excepcionais. Meu GitHub contém diversos projetos em que trabalhei recentemente.
               </p>
             </FadeIn>
             
             <FadeIn direction="up" delay={500}>
               <CustomButton 
-                href="/cv.pdf" 
+                href="https://github.com/EzequielSR" 
                 external
-                icon={<ArrowRight className="w-4 h-4" />}
-                iconPosition="right"
+                icon={<Github className="w-4 h-4" />}
+                iconPosition="left"
               >
-                {t('downloadCV')}
+                Ver GitHub
               </CustomButton>
             </FadeIn>
           </div>
@@ -86,36 +91,36 @@ export default function About() {
             <div className="ml-4">
               <FadeIn direction="up" delay={300}>
                 <TimelineItem
-                  year="2021 - Presente"
-                  title={t('leadDesigner.title')}
-                  description={t('leadDesigner.description')}
+                  year="2023 - Presente"
+                  title="Desenvolvedor Full Stack"
+                  description="Desenvolvimento de aplicações web utilizando React, TypeScript, Node.js e outras tecnologias modernas."
                   icon={<Briefcase className="w-5 h-5" />}
                 />
               </FadeIn>
               
               <FadeIn direction="up" delay={400}>
                 <TimelineItem
-                  year="2018 - 2021"
-                  title={t('seniorDev.title')}
-                  description={t('seniorDev.description')}
+                  year="2020 - 2023"
+                  title="Desenvolvedor Frontend"
+                  description="Especialização em desenvolvimento frontend com foco em React e tecnologias relacionadas."
                   icon={<Clock className="w-5 h-5" />}
                 />
               </FadeIn>
               
               <FadeIn direction="up" delay={500}>
                 <TimelineItem
-                  year="2016 - 2018"
-                  title={t('bachelorCS.title')}
-                  description={t('bachelorCS.description')}
+                  year="2018 - 2020"
+                  title="Ciência da Computação"
+                  description="Formação em Ciência da Computação com foco em desenvolvimento web e software."
                   icon={<GraduationCap className="w-5 h-5" />}
                 />
               </FadeIn>
               
               <FadeIn direction="up" delay={600}>
                 <TimelineItem
-                  year="2015"
-                  title={t('uiCertification.title')}
-                  description={t('uiCertification.description')}
+                  year="2018"
+                  title="Certificação em Desenvolvimento Web"
+                  description="Certificação em desenvolvimento web avançado, incluindo HTML5, CSS3 e JavaScript."
                   icon={<Award className="w-5 h-5" />}
                 />
               </FadeIn>
