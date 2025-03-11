@@ -2,7 +2,7 @@
 import React from 'react';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
-import { ArrowRight, Award, Briefcase, Clock, GraduationCap, Github, Linkedin } from 'lucide-react';
+import { ArrowRight, Award, Briefcase, Clock, GraduationCap, Github, Linkedin, Download } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface TimelineItemProps {
@@ -56,22 +56,22 @@ export default function About() {
             
             <FadeIn direction="up" delay={200}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Ezequiel de Souza Rodrigues - Desenvolvedor Full Stack | Python | DevOps
+                Ezequiel de Souza Rodrigues - Desenvolvedor Front-End | QA| DevOps
               </p>
             </FadeIn>
             
             <FadeIn direction="up" delay={300}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Sou um desenvolvedor apaixonado com experiência em Python, HTML/CSS, JavaScript, Django e PostgreSQL.
-                Atualmente trabalho na Serviço Federal de Processamento de Dados (SERPRO) como Analista,
-                onde desenvolvo soluções para o governo brasileiro com foco em tecnologias de ponta e segurança.
+                Sou um desenvolvedor apaixonado com experiência em  HTML/CSS, JavaScript, React e Typescript.
+                Atualmente trabalho na DBServer como Desenvolvedor I,
+                onde desenvolvo soluções para empresas parceiras  com foco em tecnologias de ponta e testes de seguranca.
               </p>
             </FadeIn>
             
             <FadeIn direction="up" delay={400}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Além da minha experiência profissional, tenho formação acadêmica em Engenharia de Produção pela 
-                Universidade Federal do Rio Grande (FURG), onde desenvolvi habilidades analíticas e de resolução 
+                Além da minha experiência profissional, tenho formação acadêmica em Análise e Desenvolvimento de Sistemas pela 
+                Universidade Anhanguera, onde desenvolvi habilidades analíticas e de resolução 
                 de problemas que complementam minhas capacidades técnicas.
               </p>
             </FadeIn>
@@ -81,6 +81,7 @@ export default function About() {
                 <CustomButton 
                   href="https://github.com/EzequielSR" 
                   external
+                  variant="outline"
                   icon={<Github className="w-4 h-4" />}
                   iconPosition="left"
                 >
@@ -94,7 +95,15 @@ export default function About() {
                   iconPosition="left"
                 >
                   LinkedIn
-                </CustomButton>
+                </CustomButton >
+                <CustomButton 
+                  href="https://www.linkedin.com/in/ezequiel-de-souza-rodrigues-25b538227/" 
+                  external
+                  
+                  icon={< Download className="w-4 h-4" />}
+                  iconPosition="left"
+                >
+                Download CV</CustomButton >
               </div>
             </FadeIn>
           </div>
@@ -107,8 +116,8 @@ export default function About() {
             <div className="ml-4">
               <FadeIn direction="up" delay={300}>
                 <TimelineItem
-                  year="2023 - Presente"
-                  title="Analista na SERPRO"
+                  year="2024 - Presente"
+                  title="Desenvolvedor I"
                   description="Desenvolvimento de soluções governamentais utilizando Python, Django e tecnologias relacionadas, com foco em segurança e alta disponibilidade."
                   icon={<Briefcase className="w-5 h-5" />}
                 />
@@ -117,7 +126,7 @@ export default function About() {
               <FadeIn direction="up" delay={400}>
                 <TimelineItem
                   year="2021 - 2023"
-                  title="Desenvolvedor Python"
+                  title="Freelancer Front-End"
                   description="Desenvolvimento de aplicações backend com Python, Django e PostgreSQL, implementando APIs RESTful e soluções escaláveis."
                   icon={<Clock className="w-5 h-5" />}
                 />
@@ -126,18 +135,9 @@ export default function About() {
               <FadeIn direction="up" delay={500}>
                 <TimelineItem
                   year="2017 - 2023"
-                  title="Engenharia de Produção - FURG"
+                  title="Análise e Desenvolvimento de Sistemas - ANHANGUERA"
                   description="Formação em Engenharia de Produção pela Universidade Federal do Rio Grande, com foco em otimização de processos e análise de dados."
                   icon={<GraduationCap className="w-5 h-5" />}
-                />
-              </FadeIn>
-              
-              <FadeIn direction="up" delay={600}>
-                <TimelineItem
-                  year="2020"
-                  title="Certificação em Ciência de Dados"
-                  description="Especialização em análise de dados, Python para ciência de dados e visualização de informações."
-                  icon={<Award className="w-5 h-5" />}
                 />
               </FadeIn>
             </div>
