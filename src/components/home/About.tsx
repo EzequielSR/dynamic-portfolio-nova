@@ -2,7 +2,7 @@
 import React from 'react';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
-import { ArrowRight, Award, Briefcase, Clock, GraduationCap, Github } from 'lucide-react';
+import { ArrowRight, Award, Briefcase, Clock, GraduationCap, Github, Linkedin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface TimelineItemProps {
@@ -48,38 +48,54 @@ export default function About() {
                 <a href="https://github.com/EzequielSR" target="_blank" rel="noopener noreferrer" className="inline-flex">
                   <Github className="h-8 w-8 text-primary hover:text-accent transition-colors" />
                 </a>
+                <a href="https://www.linkedin.com/in/ezequiel-de-souza-rodrigues-25b538227/" target="_blank" rel="noopener noreferrer" className="inline-flex">
+                  <Linkedin className="h-8 w-8 text-primary hover:text-accent transition-colors" />
+                </a>
               </h2>
             </FadeIn>
             
             <FadeIn direction="up" delay={200}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Ezequiel Santos Rodrigues - Desenvolvedor Full Stack
+                Ezequiel de Souza Rodrigues - Desenvolvedor Full Stack | Python | DevOps
               </p>
             </FadeIn>
             
             <FadeIn direction="up" delay={300}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Sou um desenvolvedor apaixonado por criar soluções web inovadoras, com foco em tecnologias frontend e backend modernas.
-                Atualmente trabalho com React, TypeScript, Node.js e outras tecnologias para criar aplicações web responsivas e de alto desempenho.
+                Sou um desenvolvedor apaixonado com experiência em Python, HTML/CSS, JavaScript, Django e PostgreSQL.
+                Atualmente trabalho na Serviço Federal de Processamento de Dados (SERPRO) como Analista,
+                onde desenvolvo soluções para o governo brasileiro com foco em tecnologias de ponta e segurança.
               </p>
             </FadeIn>
             
             <FadeIn direction="up" delay={400}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Estou constantemente aprendendo novas tecnologias e técnicas para melhorar minhas habilidades de desenvolvimento
-                e criar experiências digitais excepcionais. Meu GitHub contém diversos projetos em que trabalhei recentemente.
+                Além da minha experiência profissional, tenho formação acadêmica em Engenharia de Produção pela 
+                Universidade Federal do Rio Grande (FURG), onde desenvolvi habilidades analíticas e de resolução 
+                de problemas que complementam minhas capacidades técnicas.
               </p>
             </FadeIn>
             
             <FadeIn direction="up" delay={500}>
-              <CustomButton 
-                href="https://github.com/EzequielSR" 
-                external
-                icon={<Github className="w-4 h-4" />}
-                iconPosition="left"
-              >
-                Ver GitHub
-              </CustomButton>
+              <div className="flex gap-4">
+                <CustomButton 
+                  href="https://github.com/EzequielSR" 
+                  external
+                  icon={<Github className="w-4 h-4" />}
+                  iconPosition="left"
+                >
+                  Ver GitHub
+                </CustomButton>
+                <CustomButton 
+                  href="https://www.linkedin.com/in/ezequiel-de-souza-rodrigues-25b538227/" 
+                  external
+                  variant="outline"
+                  icon={<Linkedin className="w-4 h-4" />}
+                  iconPosition="left"
+                >
+                  LinkedIn
+                </CustomButton>
+              </div>
             </FadeIn>
           </div>
           
@@ -92,35 +108,35 @@ export default function About() {
               <FadeIn direction="up" delay={300}>
                 <TimelineItem
                   year="2023 - Presente"
-                  title="Desenvolvedor Full Stack"
-                  description="Desenvolvimento de aplicações web utilizando React, TypeScript, Node.js e outras tecnologias modernas."
+                  title="Analista na SERPRO"
+                  description="Desenvolvimento de soluções governamentais utilizando Python, Django e tecnologias relacionadas, com foco em segurança e alta disponibilidade."
                   icon={<Briefcase className="w-5 h-5" />}
                 />
               </FadeIn>
               
               <FadeIn direction="up" delay={400}>
                 <TimelineItem
-                  year="2020 - 2023"
-                  title="Desenvolvedor Frontend"
-                  description="Especialização em desenvolvimento frontend com foco em React e tecnologias relacionadas."
+                  year="2021 - 2023"
+                  title="Desenvolvedor Python"
+                  description="Desenvolvimento de aplicações backend com Python, Django e PostgreSQL, implementando APIs RESTful e soluções escaláveis."
                   icon={<Clock className="w-5 h-5" />}
                 />
               </FadeIn>
               
               <FadeIn direction="up" delay={500}>
                 <TimelineItem
-                  year="2018 - 2020"
-                  title="Ciência da Computação"
-                  description="Formação em Ciência da Computação com foco em desenvolvimento web e software."
+                  year="2017 - 2023"
+                  title="Engenharia de Produção - FURG"
+                  description="Formação em Engenharia de Produção pela Universidade Federal do Rio Grande, com foco em otimização de processos e análise de dados."
                   icon={<GraduationCap className="w-5 h-5" />}
                 />
               </FadeIn>
               
               <FadeIn direction="up" delay={600}>
                 <TimelineItem
-                  year="2018"
-                  title="Certificação em Desenvolvimento Web"
-                  description="Certificação em desenvolvimento web avançado, incluindo HTML5, CSS3 e JavaScript."
+                  year="2020"
+                  title="Certificação em Ciência de Dados"
+                  description="Especialização em análise de dados, Python para ciência de dados e visualização de informações."
                   icon={<Award className="w-5 h-5" />}
                 />
               </FadeIn>

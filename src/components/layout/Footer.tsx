@@ -13,10 +13,10 @@ export default function Footer() {
       <div className="section-container py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
-            <h3 className="font-display font-bold text-xl">Ezequiel S. Rodrigues</h3>
+            <h3 className="font-display font-bold text-xl">Ezequiel de Souza Rodrigues</h3>
             <p className="text-muted-foreground max-w-md">
-              Desenvolvedor Full Stack com foco em criar experiências digitais excepcionais
-              e aplicações web modernas e responsivas.
+              Desenvolvedor Full Stack com especialização em Python, Django e DevOps, 
+              focado em criar soluções governamentais seguras e de alta qualidade.
             </p>
           </div>
           
@@ -37,7 +37,7 @@ export default function Footer() {
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
+              <a href="https://www.linkedin.com/in/ezequiel-de-souza-rodrigues-25b538227/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </a>
@@ -45,7 +45,7 @@ export default function Footer() {
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </a>
-              <a href="mailto:ezequiel.santos@example.com" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
+              <a href="mailto:ezequiel.souza.rodrigues@gmail.com" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </a>
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
         
         <div className="mt-12 pt-6 border-t border-border/40 text-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} Ezequiel Santos Rodrigues. {t('copyright')}</p>
+          <p>&copy; {currentYear} Ezequiel de Souza Rodrigues. {t('copyright')}</p>
         </div>
       </div>
     </footer>

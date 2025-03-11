@@ -58,7 +58,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <RouterLink to="/" className="flex items-center" onClick={closeMenu}>
-          <span className="font-display font-bold text-2xl">Portfolio</span>
+          <span className="font-display font-bold text-2xl">Ezequiel SR</span>
         </RouterLink>
 
         {/* Desktop Menu */}
