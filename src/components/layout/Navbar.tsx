@@ -31,22 +31,9 @@ const NavItem = ({ href, translationKey, className, onClick }: NavItemProps) => 
   );
 };
 
-// Font styles for the typing animation
-const fontStyles = [
-  "font-display font-bold",
-  "font-sans italic font-bold",
-  "font-mono font-bold",
-  "font-serif font-bold",
-  "font-display font-light tracking-wider"
-];
-
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [portfolioText, setPortfolioText] = useState("Portfolio");
-  const [currentFontIndex, setCurrentFontIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(150);
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -60,34 +47,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Typing animation effect
-  useEffect(() => {
-    const fullText = "Portfolio";
-    
-    const timer = setTimeout(() => {
-      if (!isDeleting && portfolioText === fullText) {
-        // Wait a bit before starting to delete
-        setTimeout(() => setIsDeleting(true), 1500);
-        return;
-      }
-      
-      if (isDeleting) {
-        setPortfolioText((prev) => prev.substring(0, prev.length - 1));
-        setTypingSpeed(80);
-        
-        if (portfolioText.length === 0) {
-          setIsDeleting(false);
-          setCurrentFontIndex((prev) => (prev + 1) % fontStyles.length);
-          setTypingSpeed(150);
-        }
-      } else {
-        setPortfolioText(fullText.substring(0, portfolioText.length + 1));
-      }
-    }, typingSpeed);
-    
-    return () => clearTimeout(timer);
-  }, [portfolioText, isDeleting, currentFontIndex, typingSpeed]);
-
   return (
     <header
       className={cn(
@@ -99,10 +58,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <RouterLink to="/" className="flex items-center" onClick={closeMenu}>
-          <span className={cn("text-2xl transition-all duration-300", fontStyles[currentFontIndex])}>
-            {portfolioText}
-            <span className="animate-pulse">|</span>
-          </span>
+          <span className="font-display font-bold text-2xl">Portfolio</span>
         </RouterLink>
 
         {/* Desktop Menu */}

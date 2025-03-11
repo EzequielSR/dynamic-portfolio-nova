@@ -5,13 +5,82 @@ import CustomButton from '../ui/CustomButton';
 import { ArrowDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+// Font styles for the typing animation
+const fontStyles = [
+  "font-display font-bold",
+  "font-sans italic font-bold",
+  "font-mono font-bold",
+  "font-serif font-bold",
+  "font-display font-light tracking-wider"
+];
+
+// Motivational phrases
+const phrases = {
+  'pt-BR': [
+    "Criando experiências digitais extraordinárias",
+    "Transformando ideias em realidade digital",
+    "Elevando sua presença digital ao próximo nível",
+    "Inovação digital com propósito e paixão",
+    "Construindo o futuro, um pixel de cada vez"
+  ],
+  'en': [
+    "Creating extraordinary digital experiences",
+    "Transforming ideas into digital reality",
+    "Elevating your digital presence to the next level",
+    "Digital innovation with purpose and passion",
+    "Building the future, one pixel at a time"
+  ]
+};
+
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [currentText, setCurrentText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentFontIndex, setCurrentFontIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(80);
   
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+  
+  // Reset text when language changes
+  useEffect(() => {
+    setCurrentText("");
+    setIsDeleting(false);
+  }, [language]);
+  
+  // Typing animation effect for h1
+  useEffect(() => {
+    const currentPhrases = phrases[language as 'pt-BR' | 'en'];
+    const fullText = currentPhrases[currentIndex];
+    
+    const timer = setTimeout(() => {
+      if (!isDeleting && currentText === fullText) {
+        // Wait before starting to delete
+        setTimeout(() => setIsDeleting(true), 2000);
+        return;
+      }
+      
+      if (isDeleting) {
+        setCurrentText((prev) => prev.substring(0, prev.length - 1));
+        setTypingSpeed(30);
+        
+        if (currentText.length === 0) {
+          setIsDeleting(false);
+          setCurrentIndex((prev) => (prev + 1) % currentPhrases.length);
+          setCurrentFontIndex((prev) => (prev + 1) % fontStyles.length);
+          setTypingSpeed(80);
+        }
+      } else {
+        setCurrentText(fullText.substring(0, currentText.length + 1));
+        setTypingSpeed(80);
+      }
+    }, typingSpeed);
+    
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentIndex, typingSpeed, language]);
   
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden" id="hero">
@@ -39,8 +108,9 @@ export default function Hero() {
             </FadeIn>
             
             <FadeIn direction="up" delay={100}>
-              <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl mb-6 tracking-tight">
-                {t('creatingExperiences')}
+              <h1 className={cn("text-4xl sm:text-5xl md:text-6xl mb-6 tracking-tight", fontStyles[currentFontIndex])}>
+                {currentText}
+                <span className="animate-pulse">|</span>
               </h1>
             </FadeIn>
             
