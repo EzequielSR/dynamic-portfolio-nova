@@ -30,7 +30,7 @@ const TimelineItem = ({ year, title, description, icon }: TimelineItemProps) => 
 
 export default function About() {
   const { t } = useLanguage();
-  
+
   return (
     <section className="relative py-24 sm:py-32 bg-muted/30" id="about">
       <div className="section-container">
@@ -41,7 +41,7 @@ export default function About() {
                 {t('aboutMe')}
               </span>
             </FadeIn>
-            
+
             <FadeIn direction="up" delay={100}>
               <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-6 tracking-tight flex items-center gap-3">
                 {t('passionateDevDesigner')}
@@ -53,13 +53,13 @@ export default function About() {
                 </a>
               </h2>
             </FadeIn>
-            
+
             <FadeIn direction="up" delay={200}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                 Ezequiel de Souza Rodrigues - Desenvolvedor Front-End | QA| DevOps
               </p>
             </FadeIn>
-            
+
             <FadeIn direction="up" delay={300}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                 Sou um desenvolvedor apaixonado com experiência em  HTML/CSS, JavaScript, React e Typescript.
@@ -67,28 +67,28 @@ export default function About() {
                 onde desenvolvo soluções para empresas parceiras  com foco em tecnologias de ponta e testes de seguranca.
               </p>
             </FadeIn>
-            
+
             <FadeIn direction="up" delay={400}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Além da minha experiência profissional, tenho formação acadêmica em Análise e Desenvolvimento de Sistemas pela 
-                Universidade Anhanguera, onde desenvolvi habilidades analíticas e de resolução 
+                Além da minha experiência profissional, tenho formação acadêmica em Análise e Desenvolvimento de Sistemas pela
+                Universidade Anhanguera, onde desenvolvi habilidades analíticas e de resolução
                 de problemas que complementam minhas capacidades técnicas.
               </p>
             </FadeIn>
-            
+
             <FadeIn direction="up" delay={500}>
               <div className="flex gap-4">
-                <CustomButton 
-                  href="https://github.com/EzequielSR" 
+                <CustomButton
+                  href="https://github.com/EzequielSR"
                   external
                   variant="outline"
                   icon={<Github className="w-4 h-4" />}
                   iconPosition="left"
                 >
-                  Ver GitHub
+                  GitHub
                 </CustomButton>
-                <CustomButton 
-                  href="https://www.linkedin.com/in/ezequiel-de-souza-rodrigues-25b538227/" 
+                <CustomButton
+                  href="https://www.linkedin.com/in/ezequiel-de-souza-rodrigues-25b538227/"
                   external
                   variant="outline"
                   icon={<Linkedin className="w-4 h-4" />}
@@ -96,45 +96,45 @@ export default function About() {
                 >
                   LinkedIn
                 </CustomButton >
-                <CustomButton 
-                  href="https://www.linkedin.com/in/ezequiel-de-souza-rodrigues-25b538227/" 
+                <CustomButton
+                  href="https://www.linkedin.com/in/ezequiel-de-souza-rodrigues-25b538227/"
                   external
-                  
+
                   icon={< Download className="w-4 h-4" />}
                   iconPosition="left"
                 >
-                Download CV</CustomButton >
+                  Download CV</CustomButton >
               </div>
             </FadeIn>
           </div>
-          
+
           <div>
             <FadeIn direction="up" delay={200}>
               <h3 className="font-display font-bold text-2xl mb-8">{t('myJourney')}</h3>
             </FadeIn>
-            
+
             <div className="ml-4">
               <FadeIn direction="up" delay={300}>
                 <TimelineItem
                   year="2024 - Presente"
-                  title="Desenvolvedor I"
+                  title="Desenvolvedor I - DBServer"
                   description="Desenvolvimento de soluções governamentais utilizando Python, Django e tecnologias relacionadas, com foco em segurança e alta disponibilidade."
                   icon={<Briefcase className="w-5 h-5" />}
                 />
               </FadeIn>
-              
+
               <FadeIn direction="up" delay={400}>
                 <TimelineItem
-                  year="2021 - 2023"
+                  year="2022 - 2024"
                   title="Freelancer Front-End"
                   description="Desenvolvimento de aplicações backend com Python, Django e PostgreSQL, implementando APIs RESTful e soluções escaláveis."
                   icon={<Clock className="w-5 h-5" />}
                 />
               </FadeIn>
-              
+
               <FadeIn direction="up" delay={500}>
                 <TimelineItem
-                  year="2017 - 2023"
+                  year="2024 - Presente"
                   title="Análise e Desenvolvimento de Sistemas - ANHANGUERA"
                   description="Formação em Engenharia de Produção pela Universidade Federal do Rio Grande, com foco em otimização de processos e análise de dados."
                   icon={<GraduationCap className="w-5 h-5" />}
