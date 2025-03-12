@@ -1,10 +1,10 @@
 
 import emailjs from '@emailjs/browser';
 
-// Substitua estas credenciais pelas suas do EmailJS
+// EmailJS credentials
 const SERVICE_ID = "service_f0u5kzm";
 const TEMPLATE_ID = "template_kk2y0wp";
-const PUBLIC_KEY = "F9qm_B1L8tqhKfz-R";
+const PUBLIC_KEY = "F9qm_B1L8tqhKfz-R"; // This appears to be incomplete
 
 interface EmailData {
   name: string;
@@ -15,6 +15,9 @@ interface EmailData {
 
 export const sendEmail = async (data: EmailData) => {
   try {
+    // Initialize EmailJS with your public key
+    emailjs.init(PUBLIC_KEY);
+    
     const response = await emailjs.send(
       SERVICE_ID,
       TEMPLATE_ID,
@@ -24,10 +27,10 @@ export const sendEmail = async (data: EmailData) => {
         subject: data.subject,
         message: data.message,
         to_email: "ezequieldesr@gmail.com",
-      },
-      PUBLIC_KEY
+      }
     );
 
+    console.log('SUCCESS!', response.status, response.text);
     return response;
   } catch (error) {
     console.error("Error sending email:", error);

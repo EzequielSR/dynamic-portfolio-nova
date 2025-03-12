@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { sendEmail } from '@/services/emailService';
 import FadeIn from '../animations/FadeIn';
@@ -58,10 +59,22 @@ export default function Contact() {
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      toast({
+        title: t('error'),
+        description: t('pleaseCompleteAllFields'),
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
 
     try {
-      await sendEmail(formData);
+      const response = await sendEmail(formData);
+      console.log("Email sent successfully:", response);
       
       toast({
         title: t('messageSent'),
@@ -75,6 +88,7 @@ export default function Contact() {
         message: '',
       });
     } catch (error) {
+      console.error("Error in contact component:", error);
       toast({
         title: t('error'),
         description: t('errorSendingMessage'),
