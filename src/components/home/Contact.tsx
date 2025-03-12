@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { sendEmail } from '@/services/emailService';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
 import { AtSign, MapPin, Phone, SendHorizontal } from 'lucide-react';
@@ -56,13 +56,12 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulating form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      await sendEmail(formData);
       
       toast({
         title: t('messageSent'),
@@ -75,7 +74,15 @@ export default function Contact() {
         subject: '',
         message: '',
       });
-    }, 1500);
+    } catch (error) {
+      toast({
+        title: t('error'),
+        description: t('errorSendingMessage'),
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
