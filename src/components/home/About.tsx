@@ -11,6 +11,14 @@ interface TimelineItemProps {
   description: string;
   icon: React.ReactNode;
 }
+const handleDownload = () => {
+  const link = document.createElement('a');
+  link.href = '/Currículo (1).pdf';
+  link.download = 'Currículo (1).pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
 const TimelineItem = ({ year, title, description, icon }: TimelineItemProps) => (
   <div className="flex mb-8 md:mb-12">
@@ -56,7 +64,7 @@ export default function About() {
 
             <FadeIn direction="up" delay={200}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Ezequiel de Souza Rodrigues - Desenvolvedor Front-End | QA| DevOps
+                Ezequiel de Souza Rodrigues - Desenvolvedor Front-End | NodeJS | JQuery | React
               </p>
             </FadeIn>
 
@@ -97,8 +105,8 @@ export default function About() {
                   LinkedIn
                 </CustomButton >
                 <CustomButton
-                  href="https://www.linkedin.com/in/ezequiel-de-souza-rodrigues-25b538227/"
-                  external
+                  onClick={handleDownload}
+
 
                   icon={< Download className="w-4 h-4" />}
                   iconPosition="left"
@@ -118,7 +126,7 @@ export default function About() {
                 <TimelineItem
                   year="2024 - Presente"
                   title="Desenvolvedor I - DBServer"
-                  description="Desenvolvimento de soluções governamentais utilizando Python, Django e tecnologias relacionadas, com foco em segurança e alta disponibilidade."
+                  description="Desenvolvo sistemas e aplicativos, codifico e testo linguagens de programação, determino design de interface e critérios de navegação ergonômicos. "
                   icon={<Briefcase className="w-5 h-5" />}
                 />
               </FadeIn>
@@ -127,7 +135,7 @@ export default function About() {
                 <TimelineItem
                   year="2022 - 2024"
                   title="Freelancer Front-End"
-                  description="Desenvolvimento de aplicações backend com Python, Django e PostgreSQL, implementando APIs RESTful e soluções escaláveis."
+                  description="Atuei como freelancer por 2 anos, desenvolvendo landing pages e projetos pessoais. Durante esse período, trabalhei com tecnologias com HTML, CSS, JavaScript e frameworks modernos para criar interfaces responsivas e funcionais."
                   icon={<Clock className="w-5 h-5" />}
                 />
               </FadeIn>
@@ -136,7 +144,7 @@ export default function About() {
                 <TimelineItem
                   year="2024 - Presente"
                   title="Análise e Desenvolvimento de Sistemas - ANHANGUERA"
-                  description="Formação em Engenharia de Produção pela Universidade Federal do Rio Grande, com foco em otimização de processos e análise de dados."
+                  description="Formação em Análise e Desenvolvimento de Sistemas pela Anhanguera, com foco em desenvolvimento de software e boas práticas de engenharia."
                   icon={<GraduationCap className="w-5 h-5" />}
                 />
               </FadeIn>
