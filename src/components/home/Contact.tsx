@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { sendEmail } from '@/services/emailService';
 import FadeIn from '../animations/FadeIn';
@@ -7,6 +6,8 @@ import { AtSign, MapPin, Phone, SendHorizontal } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { toast } from "@/hooks/use-toast";
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Input } from '../ui/input';
+import { Label } from '../ui/label';
 
 interface ContactInfoProps {
   icon: React.ReactNode;
@@ -68,7 +69,7 @@ export default function Contact() {
     // Validate form
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       toast({
-        title: t('error'),
+        title: t('error') || 'Erro',
         description: 'Por favor, preencha todos os campos.',
         variant: "destructive",
       });
@@ -78,7 +79,7 @@ export default function Contact() {
     // Validate email format
     if (!validateEmail(formData.email)) {
       toast({
-        title: t('error'),
+        title: t('error') || 'Erro',
         description: "Por favor, informe um e-mail válido.",
         variant: "destructive",
       });
@@ -88,7 +89,9 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      await sendEmail(formData);
+      console.log("Tentando enviar email...");
+      const response = await sendEmail(formData);
+      console.log("Resposta do envio:", response);
       
       toast({
         title: 'Mensagem enviada!',
@@ -102,12 +105,15 @@ export default function Contact() {
         subject: '',
         message: '',
       });
-    } catch (error) {
-      console.error("Error in contact component:", error);
+    } catch (error: any) {
+      console.error("Erro detalhado ao enviar mensagem:", error);
+      
+      // Mensagem de erro mais descritiva
+      const errorMessage = error?.text || error?.message || 'Houve um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.';
       
       toast({
-        title: 'Erro',
-        description: 'Houve um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.',
+        title: 'Erro no envio',
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
@@ -142,70 +148,58 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6 p-6 bg-card/20 backdrop-blur-sm border border-border/50 rounded-lg">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    <Label htmlFor="name" className="block text-sm font-medium mb-2">
                       {t('name')}
-                    </label>
-                    <input
+                    </Label>
+                    <Input
                       id="name"
                       name="name"
                       type="text"
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className={cn(
-                        "w-full px-4 py-3 bg-background border border-input rounded-md",
-                        "focus:outline-none focus:ring-2 focus:ring-primary/50",
-                        "placeholder:text-muted-foreground/60 transition-all"
-                      )}
+                      className="w-full"
                       placeholder={t('yourName')}
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    <Label htmlFor="email" className="block text-sm font-medium mb-2">
                       {t('email')}
-                    </label>
-                    <input
+                    </Label>
+                    <Input
                       id="email"
                       name="email"
                       type="email"
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className={cn(
-                        "w-full px-4 py-3 bg-background border border-input rounded-md",
-                        "focus:outline-none focus:ring-2 focus:ring-primary/50",
-                        "placeholder:text-muted-foreground/60 transition-all"
-                      )}
+                      className="w-full"
                       placeholder={t('yourEmail')}
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                  <Label htmlFor="subject" className="block text-sm font-medium mb-2">
                     {t('subject')}
-                  </label>
-                  <input
+                  </Label>
+                  <Input
                     id="subject"
                     name="subject"
                     type="text"
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className={cn(
-                      "w-full px-4 py-3 bg-background border border-input rounded-md",
-                      "focus:outline-none focus:ring-2 focus:ring-primary/50",
-                      "placeholder:text-muted-foreground/60 transition-all"
-                    )}
+                    className="w-full"
                     placeholder={t('howCanIHelp')}
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <Label htmlFor="message" className="block text-sm font-medium mb-2">
                     {t('message')}
-                  </label>
+                  </Label>
                   <textarea
                     id="message"
                     name="message"
