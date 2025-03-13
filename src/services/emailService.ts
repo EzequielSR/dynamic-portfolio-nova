@@ -2,9 +2,9 @@
 import emailjs from '@emailjs/browser';
 
 // EmailJS credentials
-const SERVICE_ID = "service_f0u5kzm";
-const TEMPLATE_ID = "template_kk2y0wp";
-const PUBLIC_KEY = "6vNXvs9kc9rmv6fYi"; // Public key is ok to be exposed in client-side code
+const SERVICE_ID = "service_fg6jvzn";
+const TEMPLATE_ID = "template_k90m7vo";
+const PUBLIC_KEY = "dLmNKNEVUM3RUXzG-"; // Public key is ok to be exposed in client-side code
 
 interface EmailData {
   name: string;
