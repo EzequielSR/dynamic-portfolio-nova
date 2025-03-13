@@ -69,7 +69,7 @@ export default function Contact() {
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       toast({
         title: t('error'),
-        description: t('pleaseCompleteAllFields'),
+        description: 'Por favor, preencha todos os campos.',
         variant: "destructive",
       });
       return;
@@ -88,12 +88,11 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await sendEmail(formData);
-      console.log("Email sent successfully:", response);
+      await sendEmail(formData);
       
       toast({
-        title: t('messageSent'),
-        description: t('thankYou'),
+        title: 'Mensagem enviada!',
+        description: 'Obrigado pelo contato. Responderei o mais breve possível.',
       });
       
       // Reset form after successful submission
@@ -106,15 +105,9 @@ export default function Contact() {
     } catch (error) {
       console.error("Error in contact component:", error);
       
-      // More specific error message based on the error
-      let errorMessage = t('errorSendingMessage');
-      if (error && typeof error === 'object' && 'text' in error) {
-        errorMessage = `${t('errorSendingMessage')}: ${(error as any).text}`;
-      }
-      
       toast({
-        title: t('error'),
-        description: errorMessage,
+        title: 'Erro',
+        description: 'Houve um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.',
         variant: "destructive",
       });
     } finally {
@@ -238,7 +231,7 @@ export default function Contact() {
                     iconPosition="right"
                     className="w-full md:w-auto"
                   >
-                    {isSubmitting ? t('sending') : t('sendMessage')}
+                    {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
                   </CustomButton>
                 </div>
               </form>
@@ -249,8 +242,6 @@ export default function Contact() {
             <ContactInfo
               icon={<AtSign className="w-5 h-5" />}
               title={t('email')}
-              value="ezequieldesr@gmail.com"
-              href="mailto:ezequieldesr@gmail.com"
               value="ezequieldesr@gmail.com"
               href="mailto:ezequieldesr@gmail.com"
               delay={400}

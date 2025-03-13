@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 // EmailJS credentials
 const SERVICE_ID = "service_f0u5kzm";
 const TEMPLATE_ID = "template_kk2y0wp";
-const PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Replace with your actual complete public key
+const PUBLIC_KEY = "6vNXvs9kc9rmv6fYi"; // Public key is ok to be exposed in client-side code
 
 interface EmailData {
   name: string;
@@ -30,7 +30,7 @@ export const sendEmail = async (data: EmailData) => {
       }
     );
 
-    console.log('SUCCESS!', response.status, response.text);
+    console.log('Email sent successfully:', response.status, response.text);
     return response;
   } catch (error) {
     console.error("Error sending email:", error);
