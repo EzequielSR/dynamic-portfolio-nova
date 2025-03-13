@@ -226,23 +226,23 @@ export default function Contact() {
             <ContactInfo
               icon={<AtSign className="w-5 h-5" />}
               title={t('email')}
-              value="contato@example.com"
-              href="mailto:contato@example.com"
+              value="ezequieldesr@gmail.com"
+              href="mailto:ezequieldesr@gmail.com"
               delay={400}
             />
             
             <ContactInfo
               icon={<Phone className="w-5 h-5" />}
               title={t('phone')}
-              value="+55 (11) 99999-9999"
-              href="tel:+5511999999999"
+              value="+55 (48) 98413-0138"
+              href="tel:+5548984130138"
               delay={500}
             />
             
             <ContactInfo
               icon={<MapPin className="w-5 h-5" />}
               title={t('location')}
-              value="São Paulo, Brasil"
+              value="Santa Catarina, Brasil"
               delay={600}
             />
           </div>
