@@ -105,9 +105,16 @@ export default function Contact() {
       });
     } catch (error) {
       console.error("Error in contact component:", error);
+      
+      // More specific error message based on the error
+      let errorMessage = t('errorSendingMessage');
+      if (error && typeof error === 'object' && 'text' in error) {
+        errorMessage = `${t('errorSendingMessage')}: ${(error as any).text}`;
+      }
+      
       toast({
         title: t('error'),
-        description: t('errorSendingMessage'),
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {

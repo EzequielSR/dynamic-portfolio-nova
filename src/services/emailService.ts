@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 // EmailJS credentials
 const SERVICE_ID = "service_f0u5kzm";
 const TEMPLATE_ID = "template_kk2y0wp";
-const PUBLIC_KEY = "F9qm_B1L8tqhKfz-R8"; // Chave pública completa
+const PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Replace with your actual complete public key
 
 interface EmailData {
   name: string;
