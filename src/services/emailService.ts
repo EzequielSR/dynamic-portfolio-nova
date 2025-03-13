@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 // EmailJS credentials
 const SERVICE_ID = "service_f0u5kzm";
 const TEMPLATE_ID = "template_kk2y0wp";
-const PUBLIC_KEY = "F9qm_B1L8tqhKfz-R"; // This appears to be incomplete
+const PUBLIC_KEY = "F9qm_B1L8tqhKfz-R8"; // Chave pública completa
 
 interface EmailData {
   name: string;
@@ -15,7 +15,7 @@ interface EmailData {
 
 export const sendEmail = async (data: EmailData) => {
   try {
-    // Initialize EmailJS with your public key
+    // Initialize EmailJS with the public key
     emailjs.init(PUBLIC_KEY);
     
     const response = await emailjs.send(

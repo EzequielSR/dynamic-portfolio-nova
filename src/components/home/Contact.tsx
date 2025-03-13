@@ -57,6 +57,11 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
+  const validateEmail = (email: string): boolean => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -65,6 +70,16 @@ export default function Contact() {
       toast({
         title: t('error'),
         description: t('pleaseCompleteAllFields'),
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    // Validate email format
+    if (!validateEmail(formData.email)) {
+      toast({
+        title: t('error'),
+        description: "Por favor, informe um e-mail válido.",
         variant: "destructive",
       });
       return;
@@ -81,6 +96,7 @@ export default function Contact() {
         description: t('thankYou'),
       });
       
+      // Reset form after successful submission
       setFormData({
         name: '',
         email: '',
@@ -226,23 +242,23 @@ export default function Contact() {
             <ContactInfo
               icon={<AtSign className="w-5 h-5" />}
               title={t('email')}
-              value="contato@example.com"
-              href="mailto:contato@example.com"
+              value="ezequieldesr@gmail.com"
+              href="mailto:ezequieldesr@gmail.com"
               delay={400}
             />
             
             <ContactInfo
               icon={<Phone className="w-5 h-5" />}
               title={t('phone')}
-              value="+55 (11) 99999-9999"
-              href="tel:+5511999999999"
+              value="+55 (53) 98128-4988"
+              href="tel:+5553981284988"
               delay={500}
             />
             
             <ContactInfo
               icon={<MapPin className="w-5 h-5" />}
               title={t('location')}
-              value="São Paulo, Brasil"
+              value="Rio Grande, Brasil"
               delay={600}
             />
           </div>
