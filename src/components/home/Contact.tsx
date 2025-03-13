@@ -57,6 +57,11 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
+  const validateEmail = (email: string): boolean => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -65,6 +70,16 @@ export default function Contact() {
       toast({
         title: t('error'),
         description: t('pleaseCompleteAllFields'),
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    // Validate email format
+    if (!validateEmail(formData.email)) {
+      toast({
+        title: t('error'),
+        description: "Por favor, informe um e-mail válido.",
         variant: "destructive",
       });
       return;
@@ -81,6 +96,7 @@ export default function Contact() {
         description: t('thankYou'),
       });
       
+      // Reset form after successful submission
       setFormData({
         name: '',
         email: '',
@@ -89,9 +105,16 @@ export default function Contact() {
       });
     } catch (error) {
       console.error("Error in contact component:", error);
+      
+      // More specific error message based on the error
+      let errorMessage = t('errorSendingMessage');
+      if (error && typeof error === 'object' && 'text' in error) {
+        errorMessage = `${t('errorSendingMessage')}: ${(error as any).text}`;
+      }
+      
       toast({
         title: t('error'),
-        description: t('errorSendingMessage'),
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
@@ -226,6 +249,8 @@ export default function Contact() {
             <ContactInfo
               icon={<AtSign className="w-5 h-5" />}
               title={t('email')}
+              value="ezequieldesr@gmail.com"
+              href="mailto:ezequieldesr@gmail.com"
               value="ezequieldesr@gmail.com"
               href="mailto:ezequieldesr@gmail.com"
               delay={400}
