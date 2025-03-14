@@ -6,6 +6,9 @@ const SERVICE_ID = "service_fg6jvzn";
 const TEMPLATE_ID = "template_k90m7vo";
 const PUBLIC_KEY = "dLmNKNEVUM3RUXzG-"; 
 
+// Initialize EmailJS with the public key
+emailjs.init(PUBLIC_KEY);
+
 interface EmailData {
   name: string;
   email: string;
@@ -15,11 +18,6 @@ interface EmailData {
 
 export const sendEmail = async (data: EmailData) => {
   try {
-    // Configurando o EmailJS - apenas uma vez
-    if (!emailjs.init) {
-      emailjs.init(PUBLIC_KEY);
-    }
-    
     // Preparar os parâmetros para o template
     const templateParams = {
       from_name: data.name,
