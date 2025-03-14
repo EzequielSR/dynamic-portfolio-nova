@@ -91,8 +91,13 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      console.log("Tentando enviar email...");
-      console.log("Dados do formulário:", formData);
+      console.log("Tentando enviar email com os seguintes dados:");
+      console.log({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      });
       
       const response = await sendEmail({
         name: formData.name,

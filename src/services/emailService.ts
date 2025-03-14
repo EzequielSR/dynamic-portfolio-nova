@@ -18,20 +18,18 @@ interface EmailData {
 
 export const sendEmail = async (data: EmailData) => {
   try {
-    // Create template parameters object with all required fields
+    // Create template parameters object based on EmailJS template fields
     const templateParams = {
       from_name: data.name,
-      from_email: data.email,
-      subject: data.subject,
+      reply_to: data.email,
+      to_name: "Ezequiel",
       message: data.message,
-      to_name: "Ezequiel", // Adding recipient name
-      to_email: "ezequieldesr@gmail.com", // Ensuring recipient email is present
-      reply_to: data.email, // Adding reply-to field
+      subject: data.subject,
     };
     
     console.log("Enviando email com os parâmetros:", templateParams);
     
-    // Send email with all required parameters
+    // Send email with all required parameters and the PUBLIC_KEY explicitly
     const response = await emailjs.send(
       SERVICE_ID,
       TEMPLATE_ID,
