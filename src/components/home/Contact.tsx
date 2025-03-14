@@ -92,7 +92,15 @@ export default function Contact() {
 
     try {
       console.log("Tentando enviar email...");
-      const response = await sendEmail(formData);
+      console.log("Dados do formulário:", formData);
+      
+      const response = await sendEmail({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      });
+      
       console.log("Resposta do envio:", response);
       
       toast({
