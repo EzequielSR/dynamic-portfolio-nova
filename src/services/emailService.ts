@@ -29,11 +29,12 @@ export const sendEmail = async (data: EmailData) => {
     
     console.log("Enviando email com os parâmetros:", templateParams);
     
-    // Enviar o email usando a API correta do EmailJS
+    // Usando o método send com o parâmetro completo conforme documentação
     const response = await emailjs.send(
-      SERVICE_ID,
-      TEMPLATE_ID,
-      templateParams
+      SERVICE_ID, 
+      TEMPLATE_ID, 
+      templateParams, 
+      PUBLIC_KEY // Adicionando o PUBLIC_KEY como parâmetro específico
     );
 
     console.log('Email enviado com sucesso:', response.status, response.text);

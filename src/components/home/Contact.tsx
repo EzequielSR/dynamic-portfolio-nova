@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { sendEmail } from '@/services/emailService';
 import FadeIn from '../animations/FadeIn';
@@ -109,7 +110,16 @@ export default function Contact() {
       console.error("Erro detalhado ao enviar mensagem:", error);
       
       // Mensagem de erro mais descritiva
-      const errorMessage = error?.text || error?.message || 'Houve um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.';
+      let errorMessage = 'Houve um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.';
+      
+      // Tenta extrair mensagem mais específica do erro
+      if (error?.text) {
+        errorMessage = `Erro no envio: ${error.text}`;
+      } else if (error?.message) {
+        errorMessage = `Erro no envio: ${error.message}`;
+      } else if (typeof error === 'string') {
+        errorMessage = `Erro no envio: ${error}`;
+      }
       
       toast({
         title: 'Erro no envio',
