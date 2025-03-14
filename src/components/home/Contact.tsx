@@ -9,6 +9,7 @@ import { toast } from "@/hooks/use-toast";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
+import { Textarea } from '../ui/textarea';
 
 interface ContactInfoProps {
   icon: React.ReactNode;
@@ -210,19 +211,14 @@ export default function Contact() {
                   <Label htmlFor="message" className="block text-sm font-medium mb-2">
                     {t('message')}
                   </Label>
-                  <textarea
+                  <Textarea
                     id="message"
                     name="message"
                     rows={5}
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className={cn(
-                      "w-full px-4 py-3 bg-background border border-input rounded-md",
-                      "focus:outline-none focus:ring-2 focus:ring-primary/50",
-                      "placeholder:text-muted-foreground/60 transition-all",
-                      "resize-none"
-                    )}
+                    className="resize-none"
                     placeholder={t('projectDescription')}
                   />
                 </div>
