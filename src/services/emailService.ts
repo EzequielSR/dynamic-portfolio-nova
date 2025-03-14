@@ -18,8 +18,7 @@ interface EmailData {
 
 export const sendEmail = async (data: EmailData) => {
   try {
-    // Create a form element to use with emailjs
-    const form = document.createElement('form');
+    // Create template parameters object
     const templateParams = {
       from_name: data.name,
       from_email: data.email,
@@ -28,23 +27,13 @@ export const sendEmail = async (data: EmailData) => {
       to_email: "ezequieldesr@gmail.com",
     };
     
-    // Add fields to the form
-    Object.entries(templateParams).forEach(([key, value]) => {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = key;
-      input.value = String(value);
-      form.appendChild(input);
-    });
-    
     console.log("Enviando email com os parâmetros:", templateParams);
     
-    // Use sendForm instead of send for better compatibility
-    const response = await emailjs.sendForm(
+    // Use the send method directly with parameters
+    const response = await emailjs.send(
       SERVICE_ID,
       TEMPLATE_ID,
-      form,
-      PUBLIC_KEY
+      templateParams
     );
 
     console.log('Email enviado com sucesso:', response.status, response.text);
