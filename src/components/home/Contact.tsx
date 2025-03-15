@@ -1,6 +1,4 @@
-
 import React, { useState } from 'react';
-import { sendEmail } from '@/services/emailService';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
 import { AtSign, MapPin, Phone, SendHorizontal } from 'lucide-react';
@@ -10,6 +8,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Textarea } from '../ui/textarea';
+import emailjs from '@emailjs/browser'; 
 
 interface ContactInfoProps {
   icon: React.ReactNode;
@@ -68,7 +67,6 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate form
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       toast({
         title: t('error') || 'Erro',
@@ -78,7 +76,6 @@ export default function Contact() {
       return;
     }
     
-    // Validate email format
     if (!validateEmail(formData.email)) {
       toast({
         title: t('error') || 'Erro',
@@ -99,12 +96,18 @@ export default function Contact() {
         message: formData.message
       });
       
-      const response = await sendEmail({
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message
-      });
+      
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        },
+        import.meta.env.VITE_EMAILJS_USER_ID
+      );
       
       console.log("Resposta do envio:", response);
       
@@ -113,7 +116,7 @@ export default function Contact() {
         description: 'Obrigado pelo contato. Responderei o mais breve possível.',
       });
       
-      // Reset form after successful submission
+      // Reseta o formulário após o envio bem-sucedido
       setFormData({
         name: '',
         email: '',
@@ -123,10 +126,8 @@ export default function Contact() {
     } catch (error: any) {
       console.error("Erro detalhado ao enviar mensagem:", error);
       
-      // Mensagem de erro mais descritiva
       let errorMessage = 'Houve um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.';
       
-      // Tenta extrair mensagem mais específica do erro
       if (error?.text) {
         errorMessage = `Erro no envio: ${error.text}`;
       } else if (error?.message) {
