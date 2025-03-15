@@ -16,11 +16,6 @@ const SERVICE_ID = "service_fg6jvzn";
 const TEMPLATE_ID = "template_k90m7vo";
 const PUBLIC_KEY = "dLmNKNEVUM3RUXzG-";
 
-// Initialize EmailJS
-useEffect(() => {
-  emailjs.init(PUBLIC_KEY);
-}, []);
-
 interface ContactInfoProps {
   icon: React.ReactNode;
   title: string;
@@ -64,6 +59,11 @@ export default function Contact() {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Initialize EmailJS inside the component
+  useEffect(() => {
+    emailjs.init(PUBLIC_KEY);
+  }, []);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
