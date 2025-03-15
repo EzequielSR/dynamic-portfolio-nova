@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react';
-import { sendEmail } from '@/services/emailService';
+import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
 import { AtSign, MapPin, Phone, SendHorizontal } from 'lucide-react';
@@ -10,6 +10,16 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Textarea } from '../ui/textarea';
+
+// EmailJS credentials
+const SERVICE_ID = "service_fg6jvzn";
+const TEMPLATE_ID = "template_k90m7vo";
+const PUBLIC_KEY = "dLmNKNEVUM3RUXzG-";
+
+// Initialize EmailJS
+useEffect(() => {
+  emailjs.init(PUBLIC_KEY);
+}, []);
 
 interface ContactInfoProps {
   icon: React.ReactNode;
@@ -99,12 +109,21 @@ export default function Contact() {
         message: formData.message
       });
       
-      const response = await sendEmail({
-        name: formData.name,
-        email: formData.email,
+      // Preparando os parâmetros para o template
+      const templateParams = {
+        from_name: formData.name,
+        reply_to: formData.email,
+        to_name: "Ezequiel",
+        message: formData.message,
         subject: formData.subject,
-        message: formData.message
-      });
+      };
+      
+      // Envia o email usando o EmailJS diretamente
+      const response = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams
+      );
       
       console.log("Resposta do envio:", response);
       
