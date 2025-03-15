@@ -109,13 +109,14 @@ export default function Contact() {
         message: formData.message
       });
       
-      // Preparando os parâmetros para o template
+      // Preparando os parâmetros exatamente conforme esperado pelo template
       const templateParams = {
         from_name: formData.name,
-        reply_to: formData.email,
+        from_email: formData.email,
         to_name: "Ezequiel",
         message: formData.message,
         subject: formData.subject,
+        reply_to: formData.email,
       };
       
       // Envia o email usando o EmailJS diretamente

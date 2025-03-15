@@ -21,10 +21,11 @@ export const sendEmail = async (data: EmailData) => {
     // Create template parameters object based on the template's expected fields
     const templateParams = {
       from_name: data.name,
-      reply_to: data.email,
+      from_email: data.email,
       to_name: "Ezequiel",
       message: data.message,
       subject: data.subject,
+      reply_to: data.email,
     };
     
     console.log("Enviando email com os parâmetros:", templateParams);
