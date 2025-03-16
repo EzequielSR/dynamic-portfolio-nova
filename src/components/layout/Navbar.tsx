@@ -1,11 +1,12 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from '../ui/ThemeToggle';
 import LanguageToggle from '../ui/LanguageToggle';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useMobileMenu } from '@/hooks/use-mobile-menu';
 
 interface NavItemProps {
   href: string;
@@ -32,50 +33,9 @@ const NavItem = ({ href, translationKey, className, onClick }: NavItemProps) => 
 };
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { isOpen, toggle, close } = useMobileMenu();
   
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
-
-  // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (isMenuOpen && !target.closest('[data-navbar="mobile-menu"]') && !target.closest('[data-navbar="menu-button"]')) {
-        setIsMenuOpen(false);
-      }
-    };
-    
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
-  }, [isMenuOpen]);
-
-  // Close mobile menu when window is resized to desktop size
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768 && isMenuOpen) {
-        setIsMenuOpen(false);
-      }
-    };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isMenuOpen]);
-
-  // Disable body scrolling when mobile menu is open
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isMenuOpen]);
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -95,7 +55,7 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <RouterLink to="/" className="flex items-center" onClick={closeMenu}>
+        <RouterLink to="/" className="flex items-center" onClick={close}>
           <span className="font-display font-bold text-2xl">Ezequiel SR</span>
         </RouterLink>
 
@@ -116,12 +76,12 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button 
           data-navbar="menu-button"
-          className="md:hidden focus:outline-none flex items-center"
-          onClick={toggleMenu}
-          aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={isMenuOpen}
+          className="md:hidden focus:outline-none flex items-center z-50"
+          onClick={toggle}
+          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={isOpen}
         >
-          {isMenuOpen ? (
+          {isOpen ? (
             <X className="h-6 w-6" />
           ) : (
             <Menu className="h-6 w-6" />
@@ -134,34 +94,33 @@ export default function Navbar() {
         data-navbar="mobile-menu"
         className={cn(
           "fixed inset-0 z-40 mobile-menu-glass transform transition-all duration-300 ease-in-out md:hidden pt-24",
-          isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
+          isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
         )}
-        aria-hidden={!isMenuOpen}
       >
         <nav className="container mx-auto px-6 py-8 flex flex-col space-y-8">
           <NavItem 
             href="/#projects" 
             translationKey="projects" 
             className="text-xl" 
-            onClick={closeMenu} 
+            onClick={close} 
           />
           <NavItem 
             href="/#about" 
             translationKey="about" 
             className="text-xl" 
-            onClick={closeMenu} 
+            onClick={close} 
           />
           <NavItem 
             href="/#skills" 
             translationKey="skills" 
             className="text-xl" 
-            onClick={closeMenu} 
+            onClick={close} 
           />
           <NavItem 
             href="/#contact" 
             translationKey="contact" 
             className="text-xl" 
-            onClick={closeMenu} 
+            onClick={close} 
           />
           
           {/* Mobile Theme and Language Toggles */}

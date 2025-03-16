@@ -44,6 +44,21 @@ export function useMobileMenu() {
     return () => window.removeEventListener('resize', handleResize);
   }, [isOpen]);
   
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isOpen && 
+          !target.closest('[data-navbar="mobile-menu"]') && 
+          !target.closest('[data-navbar="menu-button"]')) {
+        close();
+      }
+    };
+    
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isOpen]);
+  
   return {
     isOpen,
     toggle,

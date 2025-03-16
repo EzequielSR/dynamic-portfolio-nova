@@ -91,9 +91,9 @@
     @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl dark:bg-black/10 dark:border-white/10;
   }
 
-  /* Mobile menu specific styling */
+  /* Mobile menu specific styling - improved for better visibility */
   .mobile-menu-glass {
-    @apply bg-white/90 backdrop-blur-xl border-r border-white/20 shadow-xl dark:bg-black/80 dark:border-white/5;
+    @apply bg-white/95 backdrop-blur-xl border-r border-white/20 shadow-xl dark:bg-black/90 dark:border-white/5;
   }
 
   .section-container {
