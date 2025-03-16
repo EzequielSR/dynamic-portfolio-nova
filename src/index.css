@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -88,6 +89,11 @@
 
   .glass-effect {
     @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl dark:bg-black/10 dark:border-white/10;
+  }
+
+  /* Mobile menu specific styling */
+  .mobile-menu-glass {
+    @apply bg-white/90 backdrop-blur-xl border-r border-white/20 shadow-xl dark:bg-black/80 dark:border-white/5;
   }
 
   .section-container {

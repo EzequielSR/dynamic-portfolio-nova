@@ -38,6 +38,44 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isMenuOpen && !target.closest('[data-navbar="mobile-menu"]') && !target.closest('[data-navbar="menu-button"]')) {
+        setIsMenuOpen(false);
+      }
+    };
+    
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isMenuOpen]);
+
+  // Close mobile menu when window is resized to desktop size
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMenuOpen]);
+
+  // Disable body scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -77,9 +115,11 @@ export default function Navbar() {
 
         {/* Mobile menu button */}
         <button 
+          data-navbar="menu-button"
           className="md:hidden focus:outline-none flex items-center"
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? (
             <X className="h-6 w-6" />
@@ -91,23 +131,45 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div 
+        data-navbar="mobile-menu"
         className={cn(
           "fixed inset-0 z-40 transform transition-transform ease-out-expo duration-300 glass-effect backdrop-blur-lg md:hidden pt-24",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
+        aria-hidden={!isMenuOpen}
       >
-        <div className="container mx-auto px-6 py-8 flex flex-col space-y-8">
-          <NavItem href="/#projects" translationKey="projects" className="text-xl" onClick={closeMenu} />
-          <NavItem href="/#about" translationKey="about" className="text-xl" onClick={closeMenu} />
-          <NavItem href="/#skills" translationKey="skills" className="text-xl" onClick={closeMenu} />
-          <NavItem href="/#contact" translationKey="contact" className="text-xl" onClick={closeMenu} />
+        <nav className="container mx-auto px-6 py-8 flex flex-col space-y-8">
+          <NavItem 
+            href="/#projects" 
+            translationKey="projects" 
+            className="text-xl" 
+            onClick={closeMenu} 
+          />
+          <NavItem 
+            href="/#about" 
+            translationKey="about" 
+            className="text-xl" 
+            onClick={closeMenu} 
+          />
+          <NavItem 
+            href="/#skills" 
+            translationKey="skills" 
+            className="text-xl" 
+            onClick={closeMenu} 
+          />
+          <NavItem 
+            href="/#contact" 
+            translationKey="contact" 
+            className="text-xl" 
+            onClick={closeMenu} 
+          />
           
           {/* Mobile Theme and Language Toggles */}
           <div className="flex items-center space-x-4 pt-4">
             <LanguageToggle />
             <ThemeToggle />
           </div>
-        </div>
+        </nav>
       </div>
     </header>
   );
