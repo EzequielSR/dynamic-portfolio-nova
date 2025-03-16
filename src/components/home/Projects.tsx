@@ -1,46 +1,72 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import FadeIn from '../animations/FadeIn';
 import ProjectCard from '../ui/ProjectCard';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Github } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-interface GithubRepo {
+// Interface para os projetos específicos
+interface Project {
   id: number;
   name: string;
   description: string;
   html_url: string;
   homepage: string;
   topics: string[];
+  imageUrl: string;
 }
 
 export default function Projects() {
-  const { t } = useLanguage();
-  const [repos, setRepos] = useState<GithubRepo[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchGithubRepos = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch('https://api.github.com/users/EzequielSR/repos');
-        const data = await response.json();
-
-        // Filter to show only repositories with descriptions and sort by updated date
-        const filteredRepos = data
-          .filter((repo: GithubRepo) => repo.description)
-          .slice(0, 4);
-
-        setRepos(filteredRepos);
-      } catch (error) {
-        console.error('Error fetching GitHub repos:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchGithubRepos();
-  }, []);
+  const { t, language } = useLanguage();
+  
+  // Lista de projetos específicos
+  const specificProjects: Project[] = [
+    {
+      id: 1,
+      name: "POO_Naruto_DB",
+      description: language === 'pt-BR' 
+        ? "Banco de dados de personagens de Naruto usando Programação Orientada a Objetos em Java" 
+        : "Naruto character database using Object-Oriented Programming in Java",
+      html_url: "https://github.com/EzequielSR/POO_Naruto_DB",
+      homepage: "",
+      topics: ["Java", "OOP", "Database"],
+      imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/POO_Naruto_DB"
+    },
+    {
+      id: 2,
+      name: "O_Desafio_Simon",
+      description: language === 'pt-BR' 
+        ? "Jogo de memória inspirado no clássico Simon, desenvolvido com JavaScript" 
+        : "Memory game inspired by the classic Simon, developed with JavaScript",
+      html_url: "https://github.com/EzequielSR/O_Desafio_Simon",
+      homepage: "",
+      topics: ["JavaScript", "HTML", "CSS", "Game"],
+      imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/O_Desafio_Simon"
+    },
+    {
+      id: 3,
+      name: "DiceeChallenge",
+      description: language === 'pt-BR' 
+        ? "Jogo de dados virtual desenvolvido com JavaScript para praticar manipulação do DOM" 
+        : "Virtual dice game developed with JavaScript to practice DOM manipulation",
+      html_url: "https://github.com/EzequielSR/DiceeChallenge",
+      homepage: "",
+      topics: ["JavaScript", "DOM", "Game"],
+      imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/DiceeChallenge"
+    },
+    {
+      id: 4,
+      name: "ecommerce-product-page-main",
+      description: language === 'pt-BR' 
+        ? "Página de produto de e-commerce responsiva, desenvolvida com HTML, CSS e JavaScript" 
+        : "Responsive e-commerce product page, developed with HTML, CSS and JavaScript",
+      html_url: "https://github.com/EzequielSR/ecommerce-product-page-main",
+      homepage: "",
+      topics: ["HTML", "CSS", "JavaScript", "E-commerce"],
+      imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/ecommerce-product-page-main"
+    }
+  ];
 
   return (
     <section className="relative py-24 sm:py-32" id="projects">
@@ -73,28 +99,20 @@ export default function Projects() {
           </p>
         </FadeIn>
 
-        {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            {Array(4).fill(0).map((_, index) => (
-              <div key={index} className="h-80 rounded-lg bg-card/40 animate-pulse"></div>
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            {repos.map((repo, index) => (
-              <FadeIn key={repo.id} direction="up" delay={300 + index * 100}>
-                <ProjectCard
-                  title={repo.name}
-                  description={repo.description || ""}
-                  image={`https://opengraph.githubassets.com/1/EzequielSR/${repo.name}`}
-                  tags={repo.topics.length > 0 ? repo.topics : ["GitHub"]}
-                  liveUrl={repo.homepage || ""}
-                  githubUrl={repo.html_url}
-                />
-              </FadeIn>
-            ))}
-          </div>
-        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          {specificProjects.map((project, index) => (
+            <FadeIn key={project.id} direction="up" delay={300 + index * 100}>
+              <ProjectCard
+                title={project.name}
+                description={project.description}
+                image={project.imageUrl}
+                tags={project.topics}
+                liveUrl={project.homepage || ""}
+                githubUrl={project.html_url}
+              />
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   );
