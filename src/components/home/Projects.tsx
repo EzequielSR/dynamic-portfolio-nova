@@ -29,7 +29,7 @@ export default function Projects() {
         ? "Banco de dados de personagens de Naruto usando Programação Orientada a Objetos em Java" 
         : "Naruto character database using Object-Oriented Programming in Java",
       html_url: "https://github.com/EzequielSR/POO_Naruto_DB",
-      homepage: "",
+      homepage: "https://poo-naruto-db.vercel.app/",
       topics: ["Java", "OOP", "Database"],
       imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/POO_Naruto_DB"
     },
@@ -40,7 +40,7 @@ export default function Projects() {
         ? "Jogo de memória inspirado no clássico Simon, desenvolvido com JavaScript" 
         : "Memory game inspired by the classic Simon, developed with JavaScript",
       html_url: "https://github.com/EzequielSR/O_Desafio_Simon",
-      homepage: "",
+      homepage: "https://o-desafio-simon.vercel.app/",
       topics: ["JavaScript", "HTML", "CSS", "Game"],
       imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/O_Desafio_Simon"
     },
@@ -51,7 +51,7 @@ export default function Projects() {
         ? "Jogo de dados virtual desenvolvido com JavaScript para praticar manipulação do DOM" 
         : "Virtual dice game developed with JavaScript to practice DOM manipulation",
       html_url: "https://github.com/EzequielSR/DiceeChallenge",
-      homepage: "",
+      homepage: "https://dicee-challenge-gamma.vercel.app/",
       topics: ["JavaScript", "DOM", "Game"],
       imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/DiceeChallenge"
     },
@@ -62,7 +62,7 @@ export default function Projects() {
         ? "Página de produto de e-commerce responsiva, desenvolvida com HTML, CSS e JavaScript" 
         : "Responsive e-commerce product page, developed with HTML, CSS and JavaScript",
       html_url: "https://github.com/EzequielSR/ecommerce-product-page-main",
-      homepage: "",
+      homepage: "https://ecommerce-product-page-main-beta.vercel.app/",
       topics: ["HTML", "CSS", "JavaScript", "E-commerce"],
       imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/ecommerce-product-page-main"
     }
