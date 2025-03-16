@@ -171,10 +171,10 @@ export default function Hero() {
           </FadeIn>
         </div>
         
-        <FadeIn delay={600} className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+        <FadeIn delay={600} className="absolute left-1/2 transform -translate-x-1/2">
           <a 
             href="#projects" 
-            className="flex flex-col items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="flex flex-col items-center justify-center mt-12 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <span className="mb-2">{t('scrollToExplore')}</span>
             <ArrowDown className="w-5 h-5 animate-bounce" />
