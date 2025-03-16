@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 import ThemeToggle from '../ui/ThemeToggle';
 import LanguageToggle from '../ui/LanguageToggle';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useMobileMenu } from '@/hooks/use-mobile-menu';
 
 interface NavItemProps {
   href: string;
@@ -31,7 +32,6 @@ const NavItem = ({ href, translationKey, className, onClick }: NavItemProps) => 
 };
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   
   const toggleMenu = () => {
@@ -71,7 +71,7 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <RouterLink to="/" className="flex items-center" onClick={closeMenu}>
+        <RouterLink to="/" className="flex items-center" onClick={close}>
           <span className="font-display font-bold text-2xl">Ezequiel SR</span>
         </RouterLink>
 
@@ -95,7 +95,7 @@ export default function Navbar() {
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
         >
-          {isMenuOpen ? (
+          {isOpen ? (
             <X className="h-6 w-6" />
           ) : (
             <Menu className="h-6 w-6" />
@@ -104,6 +104,7 @@ export default function Navbar() {
       </div>
 
       <div 
+        data-navbar="mobile-menu"
         className={cn(
           "fixed inset-0 z-40 w-screen h-screen transition-transform ease-out-expo duration-300 backdrop-blur-lg bg-black/60 md:hidden flex flex-col justify-center items-center bg-card/70",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -121,7 +122,7 @@ export default function Navbar() {
             <LanguageToggle />
             <ThemeToggle />
           </div>
-        </div>
+        </nav>
       </div>
     </header>
   );
