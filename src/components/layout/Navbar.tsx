@@ -32,6 +32,7 @@ const NavItem = ({ href, translationKey, className, onClick }: NavItemProps) => 
 };
 
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   
   const toggleMenu = () => {
@@ -95,7 +96,7 @@ export default function Navbar() {
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
         >
-          {isOpen ? (
+          {isMenuOpen ? (
             <X className="h-6 w-6" />
           ) : (
             <Menu className="h-6 w-6" />
@@ -122,7 +123,7 @@ export default function Navbar() {
             <LanguageToggle />
             <ThemeToggle />
           </div>
-        </nav>
+        </div>
       </div>
     </header>
   );
