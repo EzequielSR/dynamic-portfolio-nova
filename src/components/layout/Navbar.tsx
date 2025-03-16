@@ -133,8 +133,8 @@ export default function Navbar() {
       <div 
         data-navbar="mobile-menu"
         className={cn(
-          "fixed inset-0 z-40 transform transition-transform ease-out-expo duration-300 glass-effect backdrop-blur-lg md:hidden pt-24",
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
+          "fixed inset-0 z-40 mobile-menu-glass transform transition-all duration-300 ease-in-out md:hidden pt-24",
+          isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
         )}
         aria-hidden={!isMenuOpen}
       >
