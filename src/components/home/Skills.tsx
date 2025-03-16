@@ -92,19 +92,19 @@ export default function Skills() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           <SkillCategory
             title={t('frontendDev')}
-            skills={["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Vue.js", "Next.js", "Tailwind CSS"]}
+            skills={["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "JQuery"]}
             delay={300}
           />
           
           <SkillCategory
             title={t('backendDev')}
-            skills={["Node.js", "Express", "GraphQL", "REST API", "Firebase", "PostgreSQL", "MongoDB"]}
+            skills={["Node.js", "Express", "REST API", "PostgreSQL", "Java", "Spring Boot"]}
             delay={400}
           />
           
           <SkillCategory
             title={t('designTools')}
-            skills={["Figma", "Adobe XD", "Photoshop", "Illustrator", "UI/UX", "Git", "Webpack", "Vite"]}
+            skills={["Figma", "UI/UX", "Git","Vite", "Tailwind CSS", "Bootstrap"]}
             delay={500}
           />
         </div>
@@ -115,10 +115,10 @@ export default function Skills() {
               <h3 className="font-display font-bold text-2xl mb-6">{t('technicalSkills')}</h3>
             </FadeIn>
             
-            <SkillProgress name={t('frontendDev')} percentage={95} delay={300} />
-            <SkillProgress name="UI/UX Design" percentage={90} delay={400} />
+            <SkillProgress name={t('frontendDev')} percentage={90} delay={300} />
+            <SkillProgress name="UI/UX Design" percentage={95} delay={400} />
             <SkillProgress name={t('backendDev')} percentage={80} delay={500} />
-            <SkillProgress name="Mobile Development" percentage={75} delay={600} />
+            <SkillProgress name="Mobile Development" percentage={25} delay={600} />
           </div>
           
           <div>

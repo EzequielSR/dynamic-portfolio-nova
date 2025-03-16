@@ -8,7 +8,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Textarea } from '../ui/textarea';
-import emailjs from '@emailjs/browser'; 
+import emailjs from '@emailjs/browser';     
 
 interface ContactInfoProps {
   icon: React.ReactNode;

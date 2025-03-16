@@ -78,7 +78,7 @@ export default function About() {
 
             <FadeIn direction="up" delay={400}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Além da minha experiência profissional, tenho formação acadêmica em Análise e Desenvolvimento de Sistemas pela
+                Além da minha experiência profissional, estou em formação acadêmica em Análise e Desenvolvimento de Sistemas pela
                 Universidade Anhanguera, onde desenvolvi habilidades analíticas e de resolução
                 de problemas que complementam minhas capacidades técnicas.
               </p>
@@ -144,7 +144,7 @@ export default function About() {
                 <TimelineItem
                   year="2024 - Presente"
                   title="Análise e Desenvolvimento de Sistemas - ANHANGUERA"
-                  description="Formação em Análise e Desenvolvimento de Sistemas pela Anhanguera, com foco em desenvolvimento de software e boas práticas de engenharia."
+                  description="Formação em desenvolvimento em Análise e Desenvolvimento de Sistemas pela Anhanguera, com foco em desenvolvimento de software e boas práticas de engenharia."
                   icon={<GraduationCap className="w-5 h-5" />}
                 />
               </FadeIn>
