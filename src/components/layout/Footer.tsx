@@ -41,11 +41,7 @@ export default function Footer() {
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </a>
-              <a href="mailto:ezequiel.souza.rodrigues@gmail.com" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
+              <a href="mailto:ezequieldesr@gmail.com" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </a>
