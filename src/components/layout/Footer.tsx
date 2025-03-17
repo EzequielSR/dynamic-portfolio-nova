@@ -15,8 +15,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="font-display font-bold text-xl">Ezequiel de Souza Rodrigues</h3>
             <p className="text-muted-foreground max-w-md">
-              Desenvolvedor Full Stack com especialização em Python, Django e DevOps, 
-              focado em criar soluções governamentais seguras e de alta qualidade.
+            {t('smallAbout')}
             </p>
           </div>
           

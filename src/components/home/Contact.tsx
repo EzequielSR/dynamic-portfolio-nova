@@ -245,7 +245,7 @@ export default function Contact() {
                     iconPosition="right"
                     className="w-full md:w-auto"
                   >
-                    {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
+                    {isSubmitting ? t('sending') : t('sendMessage')}
                   </CustomButton>
                 </div>
               </form>

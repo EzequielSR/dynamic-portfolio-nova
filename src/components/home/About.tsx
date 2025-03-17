@@ -64,23 +64,19 @@ export default function About() {
 
             <FadeIn direction="up" delay={200}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Ezequiel de Souza Rodrigues - Desenvolvedor Front-End | NodeJS | JQuery | React
+              {t('aboutIntro')}
               </p>
             </FadeIn>
 
             <FadeIn direction="up" delay={300}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Sou um desenvolvedor apaixonado com experiência em  HTML/CSS, JavaScript, React e Typescript.
-                Atualmente trabalho na DBServer como Desenvolvedor I,
-                onde desenvolvo soluções para empresas parceiras  com foco em tecnologias de ponta e testes de seguranca.
+              {t('aboutDescription1')}
               </p>
             </FadeIn>
 
             <FadeIn direction="up" delay={400}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Além da minha experiência profissional, estou em formação acadêmica em Análise e Desenvolvimento de Sistemas pela
-                Universidade Anhanguera, onde desenvolvi habilidades analíticas e de resolução
-                de problemas que complementam minhas capacidades técnicas.
+              {t('aboutDescription2')}
               </p>
             </FadeIn>
 
@@ -111,7 +107,7 @@ export default function About() {
                   icon={< Download className="w-4 h-4" />}
                   iconPosition="left"
                 >
-                  Download CV</CustomButton >
+                  {t('downloadCV')}</CustomButton >
               </div>
             </FadeIn>
           </div>
@@ -124,27 +120,27 @@ export default function About() {
             <div className="ml-4">
               <FadeIn direction="up" delay={300}>
                 <TimelineItem
-                  year="2024 - Presente"
-                  title="Desenvolvedor I - DBServer"
-                  description="Desenvolvo sistemas e aplicativos, codifico e testo linguagens de programação, determino design de interface e critérios de navegação ergonômicos. "
+                  year={t('developer.year')}
+                  title= {t('developer.title')}
+                  description={t('developer.description')}
                   icon={<Briefcase className="w-5 h-5" />}
                 />
               </FadeIn>
 
               <FadeIn direction="up" delay={400}>
                 <TimelineItem
-                  year="2022 - 2024"
-                  title="Freelancer Front-End"
-                  description="Atuei como freelancer por 2 anos, desenvolvendo landing pages e projetos pessoais. Durante esse período, trabalhei com tecnologias com HTML, CSS, JavaScript e frameworks modernos para criar interfaces responsivas e funcionais."
+                  year={t('freelancer.year')}
+                  title={t('freelancer.title')}
+                  description={t('freelancer.description')}
                   icon={<Clock className="w-5 h-5" />}
                 />
               </FadeIn>
 
               <FadeIn direction="up" delay={500}>
                 <TimelineItem
-                  year="2024 - Presente"
-                  title="Análise e Desenvolvimento de Sistemas - ANHANGUERA"
-                  description="Formação em desenvolvimento em Análise e Desenvolvimento de Sistemas pela Anhanguera, com foco em desenvolvimento de software e boas práticas de engenharia."
+                  year={t('bachelorAS.year')}
+                  title={t('bachelorAS.title')}
+                  description={t('bachelorAS.description')}
                   icon={<GraduationCap className="w-5 h-5" />}
                 />
               </FadeIn>

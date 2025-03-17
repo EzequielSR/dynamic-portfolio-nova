@@ -49,28 +49,27 @@ export const translations = {
     // About section
     aboutMe: 'Sobre mim',
     passionateDevDesigner: 'Designer e desenvolvedor apaixonado por criar',
-    aboutIntro: 'Olá! Sou um desenvolvedor front-end e designer de interfaces, com mais de 5 anos de experiência na criação de experiências digitais elegantes e funcionais.',
-    aboutDescription1: 'Meu foco está em criar produtos digitais que sejam não apenas esteticamente agradáveis, mas também intuitivos e acessíveis. Acredito que o bom design é aquele que passa despercebido enquanto cumpre seu propósito.',
-    aboutDescription2: 'Quando não estou codificando ou desenhando interfaces, estou explorando novas tecnologias, lendo sobre design ou caminhando ao ar livre para renovar a criatividade.',
-    downloadCV: 'Download CV',
+    aboutIntro: 'Ezequiel de Souza Rodrigues - Desenvolvedor Front-End | NodeJS | JQuery | React',
+    aboutDescription1: 'Sou um desenvolvedor apaixonado com experiência em  HTML/CSS, JavaScript, React e Typescript. Atualmente trabalho na DBServer como Desenvolvedor I, onde desenvolvo soluções para empresas parceiras  com foco em tecnologias de ponta e testes de seguranca.',
+    aboutDescription2: ' Além da minha experiência profissional, estou em formação acadêmica em Análise e Desenvolvimento de Sistemas pela Universidade Anhanguera, onde desenvolvi habilidades analíticas e de resolução de problemas que complementam minhas capacidades técnicas.',
+    downloadCV: 'Baixar CV',
     myJourney: 'Minha jornada',
 
     // Timeline
-    leadDesigner: {
-      title: "Lead UX/UI Designer",
-      description: "Liderando projetos de design de produto e colaborando com equipes multidisciplinares para criar experiências de usuário excepcionais."
+    freelancer: {
+      year: "2022 - 2024",
+      title: "Freelancer Front-End",
+      description: "Atuei como freelancer por 2 anos, desenvolvendo landing pages e projetos pessoais. Durante esse período, trabalhei com tecnologias com HTML, CSS, JavaScript e frameworks modernos para criar interfaces responsivas e funcionais."
     },
-    seniorDev: {
-      title: "Desenvolvedor Front-end Sênior",
-      description: "Desenvolvimento de aplicações web responsivas e performáticas usando tecnologias modernas como React, TypeScript e TailwindCSS."
+    developer: {
+      year: "2024 - Presente",
+      title: "Desenvolvedor I - DBServer",
+      description: "Desenvolvo sistemas e aplicativos, codifico e testo linguagens de programação, determino design de interface e critérios de navegação ergonômicos."
     },
-    bachelorCS: {
-      title: "Bacharel em Ciência da Computação",
-      description: "Formação acadêmica com foco em programação, algoritmos, estruturas de dados e desenvolvimento de software."
-    },
-    uiCertification: {
-      title: "Certificação em UI/UX Design",
-      description: "Especialização em design de interfaces e experiência do usuário, com foco em metodologias centradas no usuário."
+    bachelorAS: {
+      year: "2024 - Presente",
+      title: "Análise e Desenvolvimento de Sistemas - ANHANGUERA",
+      description: "Formação em desenvolvimento em Análise e Desenvolvimento de Sistemas pela Anhanguera, com foco em desenvolvimento de software e boas práticas de engenharia."
     },
 
     // Skills section
@@ -107,6 +106,7 @@ export const translations = {
     location: 'Localização',
 
     // Footer
+    smallAbout: 'Desenvolvedor com especialização em NodeJS, JQuery e NodeJS, focado em criar soluções governamentais seguras e de alta qualidade.',
     quickLinks: 'Links Rápidos',
     copyright: '© {year} Portfolio. Todos os direitos reservados.',
 
@@ -162,28 +162,27 @@ export const translations = {
     // About section
     aboutMe: 'About me',
     passionateDevDesigner: 'Passionate designer and developer',
-    aboutIntro: 'Hello! I am a front-end developer and interface designer, with over 5 years of experience creating elegant and functional digital experiences.',
-    aboutDescription1: 'My focus is on creating digital products that are not only aesthetically pleasing but also intuitive and accessible. I believe that good design is one that goes unnoticed while fulfilling its purpose.',
-    aboutDescription2: 'When I\'m not coding or designing interfaces, I\'m exploring new technologies, reading about design, or walking outdoors to renew creativity.',
+    aboutIntro: 'Ezequiel de Souza Rodrigues - Front-End Developer| NodeJS | JQuery | React',
+    aboutDescription1: 'I am a passionate developer with experience in HTML/CSS, JavaScript, React, and Typescript. I currently work at DBServer as a Developer I, where I develop solutions for partner companies with a focus on cutting-edge technologies and security testing.',
+    aboutDescription2: 'In addition to my professional experience, I am in academic training in Systems Analysis and Development at Anhanguera University, where I developed analytical and solving skills of problems that complement my technical capabilities.',
     downloadCV: 'Download CV',
     myJourney: 'My journey',
 
     // Timeline
-    leadDesigner: {
-      title: "Lead UX/UI Designer",
-      description: "Leading product design projects and collaborating with multidisciplinary teams to create exceptional user experiences."
+    freelancer: {
+      year: "2022 - 2024",
+      title: "Freelancer Front-End",
+      description: "I worked as a freelancer for 2 years, developing landing pages and personal projects. During this time, I worked with technologies such as HTML, CSS, JavaScript, and modern frameworks to create responsive and functional interfaces."
     },
-    seniorDev: {
-      title: "Senior Front-end Developer",
-      description: "Development of responsive and high-performance web applications using modern technologies such as React, TypeScript, and TailwindCSS."
+    developer: {
+      year: "2024 - Present",
+      title: "Developer I - DBServer",
+      description: "I develop systems and applications, code and test programming languages, determine interface design and ergonomic navigation criteria."
     },
-    bachelorCS: {
-      title: "Bachelor in Computer Science",
-      description: "Academic training focused on programming, algorithms, data structures, and software development."
-    },
-    uiCertification: {
-      title: "UI/UX Design Certification",
-      description: "Specialization in interface design and user experience, focusing on user-centered methodologies."
+    bachelorAS: {
+      year: "2024 - Present",
+      title: "Systems Analysis and Development - ANHANGUERA",
+      description: "Training in Systems Analysis and Development by Anhanguera, with a focus on software development and good engineering practices."
     },
 
     // Skills section
@@ -220,6 +219,7 @@ export const translations = {
     location: 'Location',
 
     // Footer
+    smallAbout: 'Developer with specialization in NodeJS, JQuery and NodeJS, focused on creating secure and high-quality government solutions.',
     quickLinks: 'Quick Links',
     copyright: '© {year} Portfolio. All rights reserved.',
 
