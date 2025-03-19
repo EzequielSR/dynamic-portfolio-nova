@@ -13,8 +13,8 @@ interface TimelineItemProps {
 }
 const handleDownload = () => {
   const link = document.createElement('a');
-  link.href = '/Currículo (1).pdf';
-  link.download = 'Currículo (1).pdf';
+  link.href = '/Curriculo.pdf';
+  link.download = 'Curriculo.pdf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
