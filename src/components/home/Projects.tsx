@@ -24,17 +24,6 @@ export default function Projects() {
   const specificProjects: Project[] = [
     {
       id: 1,
-      name: "POO_Naruto_DB",
-      description: language === 'pt-BR' 
-        ? "Banco de dados de personagens de Naruto usando Programação Orientada a Objetos em Java" 
-        : "Naruto character database using Object-Oriented Programming in Java",
-      html_url: "https://github.com/EzequielSR/POO_Naruto_DB",
-      homepage: "",
-      topics: ["Java", "OOP", "Database"],
-      imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/POO_Naruto_DB"
-    },
-    {
-      id: 2,
       name: "O_Desafio_Simon",
       description: language === 'pt-BR' 
         ? "Jogo de memória inspirado no clássico Simon, desenvolvido com JavaScript" 
@@ -45,7 +34,42 @@ export default function Projects() {
       imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/O_Desafio_Simon"
     },
     {
+      id: 2,
+      name: "ecommerce-product-page-main",
+      description: language === 'pt-BR' 
+        ? "Página de produto de e-commerce responsiva, desenvolvida com HTML, CSS e JavaScript" 
+        : "Responsive e-commerce product page, developed with HTML, CSS and JavaScript",
+      html_url: "https://github.com/EzequielSR/ecommerce-product-page-main",
+      homepage: "https://ecommerce-product-page-main-zeta.vercel.app/",
+      topics: ["HTML", "CSS", "JavaScript", "E-commerce"],
+      imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/ecommerce-product-page-main"
+    },
+    
+    {
       id: 3,
+      name: "Ip-Address-Tracker",
+      description: language === 'pt-BR' 
+        ? "Desenvolvi o IP Address Tracker, um aplicativo que permite visualizar a localização de endereços IP em um mapa interativo. Utilizei a API IP Geolocation da IPify para obter os dados e o LeafletJS para a renderização do mapa, garantindo uma experiência responsiva e fiel ao design proposto." 
+        : "I developed IP Address Tracker, an application that allows you to view the location of IP addresses on an interactive map. I used IPify's IP Geolocation API to obtain the data and LeafletJS for the map rendering, ensuring a responsive experience that is faithful to the proposed design.",
+      html_url: "https://github.com/EzequielSR/Ip-Address-Tracker",
+      homepage: "https://ip-address-tracker-theta-seven.vercel.app/",
+      topics: ["React", "TypeScript", "NodeJS", "API"],
+      imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/Ip-Address-Tracker"
+    },
+    {
+      id: 4,
+      name: "POO_Naruto_DB",
+      description: language === 'pt-BR' 
+        ? "Banco de dados de personagens de Naruto usando Programação Orientada a Objetos em Java" 
+        : "Naruto character database using Object-Oriented Programming in Java",
+      html_url: "https://github.com/EzequielSR/POO_Naruto_DB",
+      homepage: "",
+      topics: ["Java", "OOP", "Database"],
+      imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/POO_Naruto_DB"
+    },
+    
+    {
+      id: 5,
       name: "Desafio_CRUD_DB",
       description: language === 'pt-BR' 
         ? "Este repositório contém um desafio de implementação de um sistema CRUD em Java com Spring Boot. O sistema permite o gerenciamento de Pessoas e Endereços, onde cada Pessoa pode ter vários Endereços, criando um relacionamento de um-para-muitos." 
@@ -55,17 +79,7 @@ export default function Projects() {
       topics: ["Java", "Spring Boot", "API RESTfull", "H2"],
       imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/Desafio_CRUD_DB"
     },
-    {
-      id: 4,
-      name: "ecommerce-product-page-main",
-      description: language === 'pt-BR' 
-        ? "Página de produto de e-commerce responsiva, desenvolvida com HTML, CSS e JavaScript" 
-        : "Responsive e-commerce product page, developed with HTML, CSS and JavaScript",
-      html_url: "https://github.com/EzequielSR/ecommerce-product-page-main",
-      homepage: "https://ecommerce-product-page-main-zeta.vercel.app/",
-      topics: ["HTML", "CSS", "JavaScript", "E-commerce"],
-      imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/ecommerce-product-page-main"
-    }
+    
   ];
 
   return (
