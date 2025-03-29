@@ -58,27 +58,15 @@ export default function Projects() {
     },
     {
       id: 4,
-      name: "POO_Naruto_DB",
-      description: language === 'pt-BR' 
-        ? "Banco de dados de personagens de Naruto usando Programação Orientada a Objetos em Java" 
-        : "Naruto character database using Object-Oriented Programming in Java",
-      html_url: "https://github.com/EzequielSR/POO_Naruto_DB",
-      homepage: "",
-      topics: ["Java", "OOP", "Database"],
-      imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/POO_Naruto_DB"
-    },
-    
-    {
-      id: 5,
       name: "Desafio_CRUD_DB",
-      description: language === 'pt-BR' 
-        ? "Este repositório contém um desafio de implementação de um sistema CRUD em Java com Spring Boot. O sistema permite o gerenciamento de Pessoas e Endereços, onde cada Pessoa pode ter vários Endereços, criando um relacionamento de um-para-muitos." 
-        : "This repository contains a challenge to implement a CRUD system in Java with Spring Boot. The system allows management of Persons and Addresses, where each Person can have many Addresses, creating a one-to-many relationship.",
+      description: language === 'pt-BR'
+          ? "Este repositório contém um desafio de implementação de um sistema CRUD em Java com Spring Boot. O sistema permite o gerenciamento de Pessoas e Endereços, onde cada Pessoa pode ter vários Endereços, criando um relacionamento de um-para-muitos."
+          : "This repository contains a challenge to implement a CRUD system in Java with Spring Boot. The system allows management of Persons and Addresses, where each Person can have many Addresses, creating a one-to-many relationship.",
       html_url: "https://github.com/EzequielSR/Desafio_CRUD_DB",
       homepage: "",
       topics: ["Java", "Spring Boot", "API RESTfull", "H2"],
       imageUrl: "https://opengraph.githubassets.com/1/EzequielSR/Desafio_CRUD_DB"
-    },
+    }
     
   ];
 
