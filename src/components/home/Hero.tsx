@@ -149,7 +149,7 @@ export default function Hero() {
           <FadeIn direction="scale" delay={400} className="hidden md:flex justify-center items-center">
             <div className="relative max-w-md mx-auto">
               {/* Profile image container with animation */}
-              <div className="relative w-72 h-72 animate-float">
+              <div className="relative w-80 h-80 animate-float">
                 {/* Center avatar */}
                 <div className="absolute inset-0 flex items-center justify-center z-10">
                   <div className="w-48 h-48 rounded-full border-4 border-primary/30 p-1 bg-gradient-to-br from-primary/20 to-accent/20 shadow-lg animate-pulse">
@@ -160,27 +160,35 @@ export default function Hero() {
                   </div>
                 </div>
                 
-                {/* Java icon */}
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-auto h-auto animate-float" style={{ animationDelay: "0.5s" }}>
+                {/* Java icon - positioned further away at top */}
+                <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-auto h-auto animate-float" style={{ animationDelay: "0.5s" }}>
                   <Badge className="px-4 py-2 text-sm font-bold bg-[#D4382C] hover:bg-[#D4382C]/90 text-white shadow-lg border-0 flex items-center gap-2">
                     <Code className="w-5 h-5" />
                     <span className="font-bold">Java</span>
                   </Badge>
                 </div>
                 
-                {/* Spring Boot icon */}
-                <div className="absolute top-1/2 -left-4 -translate-y-1/2 w-auto h-auto animate-float" style={{ animationDelay: "1s" }}>
+                {/* Spring Boot icon - positioned further left */}
+                <div className="absolute top-1/2 -left-28 -translate-y-1/2 w-auto h-auto animate-float" style={{ animationDelay: "1s" }}>
                   <Badge className="px-4 py-2 text-sm font-bold bg-[#6DB33F] hover:bg-[#6DB33F]/90 text-white shadow-lg border-0 flex items-center gap-2">
                     <Server className="w-5 h-5" />
                     <span className="font-bold">Spring Boot</span>
                   </Badge>
                 </div>
                 
-                {/* React icon */}
-                <div className="absolute top-1/2 -right-4 -translate-y-1/2 w-auto h-auto animate-float" style={{ animationDelay: "1.5s" }}>
+                {/* React icon - positioned further right */}
+                <div className="absolute top-1/2 -right-24 -translate-y-1/2 w-auto h-auto animate-float" style={{ animationDelay: "1.5s" }}>
                   <Badge className="px-4 py-2 text-sm font-bold bg-[#61DAFB] hover:bg-[#61DAFB]/90 text-black shadow-lg border-0 flex items-center gap-2">
                     <Database className="w-5 h-5" />
                     <span className="font-bold">React</span>
+                  </Badge>
+                </div>
+                
+                {/* New bottom positioned technology badge */}
+                <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-auto h-auto animate-float" style={{ animationDelay: "2s" }}>
+                  <Badge className="px-4 py-2 text-sm font-bold bg-[#764ABC] hover:bg-[#764ABC]/90 text-white shadow-lg border-0 flex items-center gap-2">
+                    <FileType2 className="w-5 h-5" />
+                    <span className="font-bold">TypeScript</span>
                   </Badge>
                 </div>
                 
