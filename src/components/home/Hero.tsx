@@ -154,14 +154,14 @@ export default function Hero() {
                 <div className="absolute inset-0 flex items-center justify-center z-10">
                   <div className="w-48 h-48 rounded-full border-4 border-primary/30 p-1 bg-gradient-to-br from-primary/20 to-accent/20 shadow-lg animate-pulse">
                     <Avatar className="w-full h-full">
-                      <AvatarImage src="/portfolio_281089.png" alt="Profile" className="object-cover" />
+                      <AvatarImage src="/ProfilePicture.jpg" alt="Profile" className="object-cover" />
                       <AvatarFallback className="text-4xl font-bold bg-primary/10">EZ</AvatarFallback>
                     </Avatar>
                   </div>
                 </div>
                 
                 {/* Java icon - positioned further away at top */}
-                <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-auto h-auto animate-float" style={{ animationDelay: "0.5s" }}>
+                <div className="absolute -top-13 left-1/2 -translate-x-1/2 w-auto h-auto animate-float" style={{ animationDelay: "0.5s" }}>
                   <Badge className="px-4 py-2 text-sm font-bold bg-[#D4382C] hover:bg-[#D4382C]/90 text-white shadow-lg border-0 flex items-center gap-2">
                     <Code className="w-5 h-5" />
                     <span className="font-bold">Java</span>
