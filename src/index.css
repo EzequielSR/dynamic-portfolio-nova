@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,11 +34,6 @@
     --ring: 221.2 83% 53.3%;
 
     --radius: 0.75rem;
-    
-    /* Tech colors */
-    --java-color: 30 90% 55%;      /* #f89820 */
-    --spring-color: 100 54% 54%;    /* #6DB33F */
-    --react-color: 190 90% 68%;     /* #61DAFB */
   }
 
   .dark {
@@ -68,11 +64,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 48%;
-    
-    /* Tech colors - same in dark mode */
-    --java-color: 30 90% 55%;      /* #f89820 */
-    --spring-color: 100 54% 54%;    /* #6DB33F */
-    --react-color: 190 90% 68%;     /* #61DAFB */
   }
 }
 
@@ -107,55 +98,6 @@
 
   .section-container {
     @apply container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24;
-  }
-  
-  /* Tech colors */
-  .text-java {
-    color: hsl(var(--java-color));
-  }
-  
-  .bg-java {
-    background-color: hsl(var(--java-color));
-  }
-  
-  .text-spring {
-    color: hsl(var(--spring-color));
-  }
-  
-  .bg-spring {
-    background-color: hsl(var(--spring-color));
-  }
-  
-  .text-react {
-    color: hsl(var(--react-color));
-  }
-  
-  .bg-react {
-    background-color: hsl(var(--react-color));
-  }
-  
-  /* Tech icon animations */
-  .tech-icon-pulse {
-    animation: tech-pulse 3s ease-in-out infinite;
-  }
-  
-  @keyframes tech-pulse {
-    0%, 100% {
-      transform: scale(1);
-      filter: brightness(1);
-    }
-    50% {
-      transform: scale(1.1);
-      filter: brightness(1.2) drop-shadow(0 0 8px currentColor);
-    }
-  }
-  
-  .tech-label {
-    @apply font-bold px-3 py-1.5 rounded-full shadow-lg transform transition-all duration-300;
-  }
-  
-  .tech-label:hover {
-    @apply -translate-y-1 scale-110;
   }
 }
 
