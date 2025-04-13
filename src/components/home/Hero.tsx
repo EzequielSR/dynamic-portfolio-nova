@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Code, FileJson, FileType2 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 
 // Font styles for the typing animation
 const fontStyles = [
@@ -144,34 +145,51 @@ export default function Hero() {
             </FadeIn>
           </div>
           
-          <FadeIn direction="scale" delay={400} className="hidden md:block">
-            <div className="relative w-full aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 bg-gradient-radial from-primary/20 to-transparent opacity-70 animate-pulse" />
-              
-              <div className="relative w-full h-full flex items-center justify-center">
-                <div className="w-64 h-64 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-xl flex items-center justify-center animate-float">
-                  <div className="text-5xl font-display font-bold bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
-                    Portfolio
+          <FadeIn direction="scale" delay={400} className="hidden md:flex justify-center items-center">
+            <div className="relative max-w-md mx-auto">
+              {/* Profile image container with animation */}
+              <div className="relative w-72 h-72 animate-float">
+                {/* Center avatar */}
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <div className="w-48 h-48 rounded-full border-4 border-primary/30 p-1 bg-gradient-to-br from-primary/20 to-accent/20 shadow-lg animate-pulse">
+                    <Avatar className="w-full h-full">
+                      <AvatarImage src="/portfolio_281089.png" alt="Profile" className="object-cover" />
+                      <AvatarFallback className="text-4xl font-bold bg-primary/10">EZ</AvatarFallback>
+                    </Avatar>
                   </div>
                 </div>
                 
-                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-accent/20 backdrop-blur-sm border border-white/10 rounded-xl shadow-lg animate-float" style={{ animationDelay: "1s" }}>
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="w-16 h-16 bg-accent/30 rounded-lg" />
-                  </div>
+                {/* HTML icon */}
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-14 h-14 bg-orange-500/90 rounded-lg shadow-lg flex items-center justify-center animate-float" style={{ animationDelay: "0.5s" }}>
+                  <FileType2 className="w-8 h-8 text-white" />
+                  <span className="absolute -bottom-6 text-xs font-semibold bg-white/80 px-2 py-1 rounded-full shadow-sm">HTML</span>
                 </div>
                 
-                <div className="absolute -top-16 -left-8 w-40 h-40 bg-primary/10 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg animate-float" style={{ animationDelay: "1.5s" }}>
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="w-24 h-5 bg-primary/20 rounded-full mb-2" />
-                  </div>
+                {/* CSS icon */}
+                <div className="absolute top-1/2 -left-4 -translate-y-1/2 w-14 h-14 bg-blue-500/90 rounded-lg shadow-lg flex items-center justify-center animate-float" style={{ animationDelay: "1s" }}>
+                  <FileJson className="w-8 h-8 text-white" />
+                  <span className="absolute -right-12 text-xs font-semibold bg-white/80 px-2 py-1 rounded-full shadow-sm">CSS</span>
                 </div>
+                
+                {/* JS icon */}
+                <div className="absolute top-1/2 -right-4 -translate-y-1/2 w-14 h-14 bg-yellow-500/90 rounded-lg shadow-lg flex items-center justify-center animate-float" style={{ animationDelay: "1.5s" }}>
+                  <Code className="w-8 h-8 text-white" />
+                  <span className="absolute -left-12 text-xs font-semibold bg-white/80 px-2 py-1 rounded-full shadow-sm">JS</span>
+                </div>
+                
+                {/* Animated background circles */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 animate-pulse" style={{ animationDuration: "3s" }}></div>
+                <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/5 to-accent/5 animate-pulse" style={{ animationDuration: "4s", animationDelay: "1s" }}></div>
               </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -bottom-16 -left-8 w-24 h-24 bg-primary/10 backdrop-blur-sm border border-white/10 rounded-xl shadow-lg animate-float" style={{ animationDelay: "2s" }}></div>
+              <div className="absolute -top-10 -right-10 w-20 h-20 bg-accent/20 backdrop-blur-sm border border-white/10 rounded-full shadow-lg animate-float" style={{ animationDelay: "1.2s" }}></div>
             </div>
           </FadeIn>
         </div>
         
-        <FadeIn delay={600} className="absolute left-1/2 transform -translate-x-1/2">
+        <FadeIn delay={600} className="absolute left-1/2 transform -translate-x-1/2 bottom-10">
           <a 
             href="#projects" 
             className="flex flex-col items-center justify-center mt-12 text-sm text-muted-foreground transition-colors hover:text-foreground"
