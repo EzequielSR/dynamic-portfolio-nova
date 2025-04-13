@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
-import { ArrowDown, Code, Database, FileType2, Server } from 'lucide-react';
+import { ArrowDown, Atom, CirclePower, Code, Coffee, Database, FileType2, Server } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { Badge } from '../ui/badge';
@@ -163,7 +163,7 @@ export default function Hero() {
                 {/* Java icon - positioned further away at top */}
                 <div className="absolute -top-13 left-1/2 -translate-x-1/2 w-auto h-auto animate-float" style={{ animationDelay: "0.5s" }}>
                   <Badge className="px-4 py-2 text-sm font-bold bg-[#D4382C] hover:bg-[#D4382C]/90 text-white shadow-lg border-0 flex items-center gap-2">
-                    <Code className="w-5 h-5" />
+                    <Coffee className="w-5 h-5" />
                     <span className="font-bold">Java</span>
                   </Badge>
                 </div>
@@ -171,7 +171,7 @@ export default function Hero() {
                 {/* Spring Boot icon - positioned further left */}
                 <div className="absolute top-1/2 -left-28 -translate-y-1/2 w-auto h-auto animate-float" style={{ animationDelay: "1s" }}>
                   <Badge className="px-4 py-2 text-sm font-bold bg-[#6DB33F] hover:bg-[#6DB33F]/90 text-white shadow-lg border-0 flex items-center gap-2">
-                    <Server className="w-5 h-5" />
+                    <CirclePower className="w-5 h-5" />
                     <span className="font-bold">Spring Boot</span>
                   </Badge>
                 </div>
@@ -179,7 +179,7 @@ export default function Hero() {
                 {/* React icon - positioned further right */}
                 <div className="absolute top-1/2 -right-24 -translate-y-1/2 w-auto h-auto animate-float" style={{ animationDelay: "1.5s" }}>
                   <Badge className="px-4 py-2 text-sm font-bold bg-[#61DAFB] hover:bg-[#61DAFB]/90 text-black shadow-lg border-0 flex items-center gap-2">
-                    <Database className="w-5 h-5" />
+                    <Atom className="w-5 h-5" />
                     <span className="font-bold">React</span>
                   </Badge>
                 </div>
@@ -187,8 +187,8 @@ export default function Hero() {
                 {/* New bottom positioned technology badge */}
                 <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-auto h-auto animate-float" style={{ animationDelay: "2s" }}>
                   <Badge className="px-4 py-2 text-sm font-bold bg-[#764ABC] hover:bg-[#764ABC]/90 text-white shadow-lg border-0 flex items-center gap-2">
-                    <FileType2 className="w-5 h-5" />
-                    <span className="font-bold">TypeScript</span>
+                    <Database className="w-5 h-5" />
+                    <span className="font-bold">SQL</span>
                   </Badge>
                 </div>
                 
@@ -204,7 +204,9 @@ export default function Hero() {
           </FadeIn>
         </div>
         
-        <FadeIn delay={600} className="absolute left-1/2 transform -translate-x-1/2 bottom-10">
+      </div>
+      
+      <FadeIn delay={600} className="absolute left-1/2 transform -translate-x-1/2 bottom-10">
           <a 
             href="#projects" 
             className="flex flex-col items-center justify-center mt-12 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -213,7 +215,6 @@ export default function Hero() {
             <ArrowDown className="w-5 h-5 animate-bounce" />
           </a>
         </FadeIn>
-      </div>
     </section>
   );
 }
