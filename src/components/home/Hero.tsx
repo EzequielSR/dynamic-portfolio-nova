@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import FadeIn from '../animations/FadeIn';
 import CustomButton from '../ui/CustomButton';
-import { ArrowDown, Code, FileJson, FileType2 } from 'lucide-react';
+import { ArrowDown, Code, Database, FileType2, Server } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+import { Badge } from '../ui/badge';
 
 // Font styles for the typing animation
 const fontStyles = [
@@ -159,22 +160,28 @@ export default function Hero() {
                   </div>
                 </div>
                 
-                {/* HTML icon */}
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-14 h-14 bg-orange-500/90 rounded-lg shadow-lg flex items-center justify-center animate-float" style={{ animationDelay: "0.5s" }}>
-                  <FileType2 className="w-8 h-8 text-white" />
-                  <span className="absolute -bottom-6 text-xs font-semibold bg-white/80 px-2 py-1 rounded-full shadow-sm">HTML</span>
+                {/* Java icon */}
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-auto h-auto animate-float" style={{ animationDelay: "0.5s" }}>
+                  <Badge className="px-4 py-2 text-sm font-bold bg-[#D4382C] hover:bg-[#D4382C]/90 text-white shadow-lg border-0 flex items-center gap-2">
+                    <Code className="w-5 h-5" />
+                    <span className="font-bold">Java</span>
+                  </Badge>
                 </div>
                 
-                {/* CSS icon */}
-                <div className="absolute top-1/2 -left-4 -translate-y-1/2 w-14 h-14 bg-blue-500/90 rounded-lg shadow-lg flex items-center justify-center animate-float" style={{ animationDelay: "1s" }}>
-                  <FileJson className="w-8 h-8 text-white" />
-                  <span className="absolute -right-12 text-xs font-semibold bg-white/80 px-2 py-1 rounded-full shadow-sm">CSS</span>
+                {/* Spring Boot icon */}
+                <div className="absolute top-1/2 -left-4 -translate-y-1/2 w-auto h-auto animate-float" style={{ animationDelay: "1s" }}>
+                  <Badge className="px-4 py-2 text-sm font-bold bg-[#6DB33F] hover:bg-[#6DB33F]/90 text-white shadow-lg border-0 flex items-center gap-2">
+                    <Server className="w-5 h-5" />
+                    <span className="font-bold">Spring Boot</span>
+                  </Badge>
                 </div>
                 
-                {/* JS icon */}
-                <div className="absolute top-1/2 -right-4 -translate-y-1/2 w-14 h-14 bg-yellow-500/90 rounded-lg shadow-lg flex items-center justify-center animate-float" style={{ animationDelay: "1.5s" }}>
-                  <Code className="w-8 h-8 text-white" />
-                  <span className="absolute -left-12 text-xs font-semibold bg-white/80 px-2 py-1 rounded-full shadow-sm">JS</span>
+                {/* React icon */}
+                <div className="absolute top-1/2 -right-4 -translate-y-1/2 w-auto h-auto animate-float" style={{ animationDelay: "1.5s" }}>
+                  <Badge className="px-4 py-2 text-sm font-bold bg-[#61DAFB] hover:bg-[#61DAFB]/90 text-black shadow-lg border-0 flex items-center gap-2">
+                    <Database className="w-5 h-5" />
+                    <span className="font-bold">React</span>
+                  </Badge>
                 </div>
                 
                 {/* Animated background circles */}
