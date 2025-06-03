@@ -13,7 +13,7 @@ interface TimelineItemProps {
 }
 const handleDownload = () => {
   const link = document.createElement('a');
-  link.href = 'https://drive.google.com/file/d/1ynqiBoFrv2KRKolfXTq-ulwc_H00ykZ_/view?usp=sharing';
+  link.href = 'https://drive.google.com/file/d/18Nj65mK5tbyBzmnWGy9SSAnRlnF8adWO/view?usp=sharing';
   link.target = 'blank';
   document.body.appendChild(link);
   link.click();
