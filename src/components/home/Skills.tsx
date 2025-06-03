@@ -98,7 +98,7 @@ export default function Skills() {
           
           <SkillCategory
             title={t('backendDev')}
-            skills={["Node.js", "Express", "REST API", "PostgreSQL", "Java", "Spring Boot"]}
+            skills={["Java", "Spring Boot","Node.js","REST API", "Express", "SQL","PostgreSQL"]}
             delay={400}
           />
           
@@ -116,9 +116,9 @@ export default function Skills() {
             </FadeIn>
             
             <SkillProgress name={t('frontendDev')} percentage={90} delay={300} />
-            <SkillProgress name="UI/UX Design" percentage={95} delay={400} />
-            <SkillProgress name={t('backendDev')} percentage={80} delay={500} />
-            <SkillProgress name="Mobile Development" percentage={25} delay={600} />
+            <SkillProgress name="UI/UX Design" percentage={90} delay={400} />
+            <SkillProgress name={t('backendDev')} percentage={85} delay={500} />
+            <SkillProgress name="Mobile Development" percentage={15} delay={600} />
           </div>
           
           <div>
@@ -126,10 +126,10 @@ export default function Skills() {
               <h3 className="font-display font-bold text-2xl mb-6">{t('softSkills')}</h3>
             </FadeIn>
             
-            <SkillProgress name={t('communication')} percentage={90} delay={300} />
-            <SkillProgress name={t('teamwork')} percentage={95} delay={400} />
+            <SkillProgress name={t('communication')} percentage={85} delay={300} />
+            <SkillProgress name={t('teamwork')} percentage={90} delay={400} />
             <SkillProgress name={t('problemSolving')} percentage={85} delay={500} />
-            <SkillProgress name={t('timeManagement')} percentage={80} delay={600} />
+            <SkillProgress name={t('timeManagement')} percentage={90} delay={600} />
           </div>
         </div>
       </div>

@@ -32,11 +32,11 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="font-medium text-sm uppercase tracking-wider text-muted-foreground">{t('contact')}</h4>
             <div className="flex space-x-4">
-              <a href="https://github.com/EzequielSR" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
+              <a href="https://github.com/ezequieldesr" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </a>
-              <a href="https://www.linkedin.com/in/ezequiel-de-souza-rodrigues-25b538227/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
+              <a href="https://www.linkedin.com/in/ezequieldesr/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-foreground/10 transition-colors">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </a>

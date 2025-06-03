@@ -106,7 +106,7 @@ export const translations = {
     location: 'Localização',
 
     // Footer
-    smallAbout: 'Desenvolvedor com especialização em NodeJS, JQuery e NodeJS, focado em criar soluções governamentais seguras e de alta qualidade.',
+    smallAbout: 'Desenvolvedor com especialização em Java, SpringBoot e NodeJS, focado em criar soluções governamentais seguras e de alta qualidade.',
     quickLinks: 'Links Rápidos',
     copyright: '© {year} Portfolio. Todos os direitos reservados.',
 
@@ -219,7 +219,7 @@ export const translations = {
     location: 'Location',
 
     // Footer
-    smallAbout: 'Developer with specialization in NodeJS, JQuery and NodeJS, focused on creating secure and high-quality government solutions.',
+    smallAbout: 'Developer with specialization in Java, SpringBoot and NodeJS, focused on creating secure and high-quality government solutions.',
     quickLinks: 'Quick Links',
     copyright: '© {year} Portfolio. All rights reserved.',
 
