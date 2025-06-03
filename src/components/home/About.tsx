@@ -13,7 +13,7 @@ interface TimelineItemProps {
 }
 const handleDownload = () => {
   const link = document.createElement('a');
-  link.href = 'https://drive.google.com/file/d/1a4hqRpbdmHLDKcnzLoAdS3khG6o62t6B/view?usp=sharing';
+  link.href = 'https://drive.google.com/file/d/1ynqiBoFrv2KRKolfXTq-ulwc_H00ykZ_/view?usp=sharing';
   link.target = 'blank';
   document.body.appendChild(link);
   link.click();
@@ -53,10 +53,10 @@ export default function About() {
             <FadeIn direction="up" delay={100}>
               <h2 className="font-display font-bold text-3xl sm:text-4xl md:text-5xl mb-6 tracking-tight flex items-center gap-3">
                 {t('passionateDevDesigner')}
-                <a href="https://github.com/EzequielSR" target="_blank" rel="noopener noreferrer" className="inline-flex">
+                <a href="https://github.com/ezequieldesr" target="_blank" rel="noopener noreferrer" className="inline-flex">
                   <Github className="h-8 w-8 text-primary hover:text-accent transition-colors" />
                 </a>
-                <a href="https://www.linkedin.com/in/ezequiel-de-souza-rodrigues-25b538227/" target="_blank" rel="noopener noreferrer" className="inline-flex">
+                <a href="https://www.linkedin.com/in/ezequieldesr/" target="_blank" rel="noopener noreferrer" className="inline-flex">
                   <Linkedin className="h-8 w-8 text-primary hover:text-accent transition-colors" />
                 </a>
               </h2>
@@ -83,7 +83,7 @@ export default function About() {
             <FadeIn direction="up" delay={500}>
               <div className="flex gap-4">
                 <CustomButton
-                  href="https://github.com/EzequielSR"
+                  href="https://github.com/ezequieldesr"
                   external
                   variant="outline"
                   icon={<Github className="w-4 h-4" />}
@@ -92,7 +92,7 @@ export default function About() {
                   GitHub
                 </CustomButton>
                 <CustomButton
-                  href="https://www.linkedin.com/in/ezequiel-de-souza-rodrigues-25b538227/"
+                  href="https://www.linkedin.com/in/ezequieldesr/"
                   external
                   variant="outline"
                   icon={<Linkedin className="w-4 h-4" />}

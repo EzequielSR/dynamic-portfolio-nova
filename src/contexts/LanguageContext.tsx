@@ -14,7 +14,7 @@ export const translations = {
     lightMode: 'Modo claro',
 
     // Hero section
-    designerDeveloper: 'Designer & Desenvolvedor',
+    designerDeveloper: 'Desenvolvedor Full-Stack Java',
     creatingExperiences: 'Criando experiências digitais extraordinárias',
     heroDescription: 'Combinando design minimalista com tecnologia de ponta para criar soluções digitais elegantes, funcionais e memoráveis.',
     viewProjects: 'Ver projetos',
@@ -48,9 +48,9 @@ export const translations = {
 
     // About section
     aboutMe: 'Sobre mim',
-    passionateDevDesigner: 'Designer e desenvolvedor apaixonado por criar',
-    aboutIntro: 'Ezequiel de Souza Rodrigues - Desenvolvedor Front-End | NodeJS | JQuery | React',
-    aboutDescription1: 'Sou um desenvolvedor apaixonado com experiência em  HTML/CSS, JavaScript, React e Typescript. Atualmente trabalho na DBServer como Desenvolvedor I, onde desenvolvo soluções para empresas parceiras  com foco em tecnologias de ponta e testes de seguranca.',
+    passionateDevDesigner: 'Desenvolvedor apaixonado por criar',
+    aboutIntro: 'Ezequiel de Souza Rodrigues - Desenvolvedor Full-Stack Java | Spring Boot | NodeJS | React',
+    aboutDescription1: 'Sou 𝐃𝐞𝐬𝐞𝐧𝐯𝐨𝐥𝐯𝐞𝐝𝐨𝐫 𝐅𝐮𝐥𝐥-𝐒𝐭𝐚𝐜𝐤 com foco em 𝐉𝐚𝐯𝐚, 𝐒𝐩𝐫𝐢𝐧𝐠 𝐁𝐨𝐨𝐭, 𝐑𝐞𝐚𝐜𝐭, 𝐍𝐨𝐝𝐞.𝐣𝐬 e 𝐒𝐐𝐋. Tenho experiência sólida em projetos web, 𝐚𝐮𝐭𝐨𝐦𝐚𝐜̧𝐚̃𝐨 𝐝𝐞 𝐭𝐞𝐬𝐭𝐞𝐬 (𝐂𝐲𝐩𝐫𝐞𝐬𝐬, 𝐉𝐔𝐧𝐢𝐭, 𝐒𝐞𝐥𝐞𝐧𝐢𝐮𝐦, 𝐑𝐞𝐬𝐭𝐀𝐬𝐬𝐮𝐫𝐞𝐝) e integração de 𝐀𝐏𝐈𝐬. Ao longo de 𝟐 𝐚𝐧𝐨𝐬, trabalhei em sistemas que vão de 𝐂𝐑𝐔𝐃𝐬 a aplicações escaláveis e seguras.',
     aboutDescription2: ' Além da minha experiência profissional, estou em formação acadêmica em Análise e Desenvolvimento de Sistemas pela Universidade Anhanguera, onde desenvolvi habilidades analíticas e de resolução de problemas que complementam minhas capacidades técnicas.',
     downloadCV: 'Baixar CV',
     myJourney: 'Minha jornada',
@@ -127,7 +127,7 @@ export const translations = {
     lightMode: 'Light mode',
 
     // Hero section
-    designerDeveloper: 'Designer & Developer',
+    designerDeveloper: 'Full-Stack Developer Java',
     creatingExperiences: 'Creating extraordinary digital experiences',
     heroDescription: 'Combining minimalist design with cutting-edge technology to create elegant, functional, and memorable digital solutions.',
     viewProjects: 'View projects',
@@ -161,9 +161,9 @@ export const translations = {
 
     // About section
     aboutMe: 'About me',
-    passionateDevDesigner: 'Passionate designer and developer',
-    aboutIntro: 'Ezequiel de Souza Rodrigues - Front-End Developer| NodeJS | JQuery | React',
-    aboutDescription1: 'I am a passionate developer with experience in HTML/CSS, JavaScript, React, and Typescript. I currently work at DBServer as a Developer I, where I develop solutions for partner companies with a focus on cutting-edge technologies and security testing.',
+    passionateDevDesigner: 'Passionate developer to develop',
+    aboutIntro: 'Ezequiel de Souza Rodrigues - Full-Stack Java Developer| Java | SpringBoot | NodeJS | React',
+    aboutDescription1: 'I am 𝐃𝐞𝐬𝐞𝐧𝐯𝐨𝐥𝐯𝐞𝐝𝐨𝐫 𝐅𝐮𝐥𝐥-𝐒𝐭𝐚𝐜𝐤 with a focus on 𝐉𝐚𝐯𝐚, 𝐒𝐩𝐫𝐢𝐧𝐠 𝐁𝐨𝐨𝐭, 𝐑𝐞𝐚𝐜𝐭, 𝐍𝐨𝐝𝐞.𝐣𝐬 and 𝐒𝐐𝐋. I have solid experience in web projects, 𝐚𝐮𝐭𝐨𝐦𝐚𝐜̧𝐚̃𝐨 𝐝𝐞 𝐭𝐞𝐬𝐭𝐞𝐬 (𝐂𝐲𝐩𝐫𝐞𝐬𝐬, 𝐉𝐔𝐧𝐢𝐭, 𝐒𝐞𝐥𝐞𝐧𝐢𝐮𝐦, 𝐑𝐞𝐬𝐭𝐀𝐬𝐬𝐮𝐫𝐞𝐝) and integration of 𝐀𝐏𝐈𝐬. Throughout 𝟐 𝐚𝐧𝐨𝐬, I have worked on systems ranging from 𝐂𝐑𝐔𝐃𝐬 to scalable and secure applications.',
     aboutDescription2: 'In addition to my professional experience, I am in academic training in Systems Analysis and Development at Anhanguera University, where I developed analytical and solving skills of problems that complement my technical capabilities.',
     downloadCV: 'Download CV',
     myJourney: 'My journey',
